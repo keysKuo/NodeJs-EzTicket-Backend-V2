@@ -1,0 +1,8 @@
+###
+
+POST http://localhost:5000/api/category/create
+content-type: application/json 
+
+{
+    "name": "Sân khấu nghệ thuật"
+}

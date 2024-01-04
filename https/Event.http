@@ -1,0 +1,13 @@
+###
+
+PUT http://localhost:5000/api/event/update/6596b4bcf006c42e69f32209
+Content-Type: application/json 
+
+{
+    "status": "ready",
+    "categories": "6596af9276222539fdf1d4f8"
+}
+
+###
+
+DELETE http://localhost:5000/api/event/delete/6596b4bcf006c42e69f32209
