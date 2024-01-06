@@ -1,0 +1,33 @@
+###
+
+POST http://localhost:5000/api/ticket/create
+Content-Type: application/json 
+
+{
+    "name": "Vé cơ bản",
+    "event": "6596f37a3c2636a585e6908c",
+    "price": 200000,
+    "qty": 5
+}
+
+###
+
+PUT http://localhost:5000/api/ticket/update/6597b99db9b4860614fef3a8
+Content-Type: application/json
+
+{
+    "status": "unavailable"
+}
+
+###
+
+DELETE http://localhost:5000/api/ticket/delete/6597b99db9b4860614fef3ac
+
+###
+
+GET http://localhost:5000/api/ticket/detail/7E36BE1F
+
+
+###
+
+GET http://localhost:5000/api/ticket/search?
