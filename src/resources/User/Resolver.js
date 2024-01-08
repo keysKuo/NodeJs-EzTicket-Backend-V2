@@ -5,13 +5,13 @@ const jwt = require('jsonwebtoken');
 
 // [POST] -> /api/user/register
 module.exports.POST_CreateUser = async (req, res, next) => {
-    // Tạo tài khoản bằng req.data
+    // Tạo tài khoản 
     return await User.create({ ...req.body })
         .then((user) => {
             return res.status(200).json({
                 success: true,
                 data: user,
-                msg: 'User inserted',
+                msg: 'Tạo tài khoản thành công',
             });
         })
         .catch((err) => {
@@ -32,7 +32,7 @@ module.exports.POST_Login = async (req, res, next) => {
     if (!user) {
         return res.status(404).json({
             success: false,
-            msg: 'Không tìm thấy User',
+            msg: 'Tài khoản không hợp lệ',
         });
     }
 
@@ -72,21 +72,21 @@ module.exports.POST_Login = async (req, res, next) => {
 // [POST] -> /api/user/confirm_otp
 module.exports.POST_ConfirmOTP = async (req, res, next) => {
     const { email, code } = req.body;
-
+    
     // Check otp
-    await OTP.findOne({ email, code })
+    await OTP.findOneAndDelete({ email, code })
         .then(async (otp) => {
-            if (otp) {
-                
+            if (otp) {               
                 // Truy vấn thông tin user
                 let user = await User.findOne({ email }).lean();
 
                 // Kí jwt rồi gửi về client
                 const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
-                return res.status(200).json({ success: true, accessToken, msg: 'Xác nhân OTP thành công' });
+                return res.status(200).json({ success: true, user, accessToken, msg: 'Xác nhân OTP thành công' });
             }
-
-            return res.status(404).json({ success: false, msg: 'Không tìm thấy OTP' });
+            else {
+                return res.status(404).json({ success: false, msg: 'Vui lòng kiểm tra lại mã OTP' });
+            }
         })
         .catch((err) => {
             console.log(err);
