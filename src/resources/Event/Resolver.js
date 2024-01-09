@@ -177,3 +177,29 @@ module.exports.GET_SearchEvents = async (req, res, next) => {
             })
         })
 }
+
+
+module.exports.POST_UploadCK = async (req, res, next) => {
+    const file = req.file;
+    if(!file) {
+        return res.status(500).json({
+            success: false,
+            msg: 'Không tìm thấy file'
+        })
+    }
+
+    let image = await cloudinary.uploader.upload(file.path);
+    if (!image) {
+        return res.status(500).json({
+            success: false,
+            msg: 'Cloudinary error',
+        });
+    }
+
+    fs.unlinkSync(file.path);
+
+    return res.status(200).json({
+        success: true,
+        url: image.url
+    })
+}
