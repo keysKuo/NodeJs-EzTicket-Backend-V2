@@ -40,3 +40,21 @@ module.exports.DELETE_RemoveCategory = async (req, res, next) => {
             })
         })
 }
+
+// [GET] -> api/category/all
+module.exports.GET_AllCategories = async (req, res, next) => {
+    return await Category.find({})
+        .then(categories => {
+            return res.status(200).json({
+                success: true,
+                categories,
+                msg: 'Tìm kiếm tất cả danh mục thành công'
+            })
+        })
+        .catch(err => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Tìm kiếm tất cả danh mục thất bại: ' + err
+            })
+        })
+}
