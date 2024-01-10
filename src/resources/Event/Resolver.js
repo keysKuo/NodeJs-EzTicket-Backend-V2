@@ -1,5 +1,3 @@
-const express = require('express');
-const router = express.Router();
 const { createSlug } = require('../../utils/crypto');
 const fs = require('fs-extra');
 const Event = require('./Model');
@@ -29,7 +27,7 @@ module.exports.POST_CreateEvent = async (req, res, next) => {
         ...req.body,
         categories: categories.split(','),
         banner: image.url,
-        status: 'ready',
+        status: 'published',
         slug: createSlug(name),
     })
         .then((event) => {
@@ -144,11 +142,11 @@ module.exports.DELETE_RemoveEvent = async (req, res, next) => {
 module.exports.GET_EventDetail = async (req, res, next) => {
     const { event_id } = req.params;
 
-    return await Event.findById(event_id).lean()
+    return await Event.findById(event_id).populate({ path: 'categories' }).lean()
         .then(event => {
             return res.status(200).json({
                 success: true,
-                event,
+                event: {...event, occur_date: event.occur_date.toLocaleDateString('en-CA')},
                 msg: 'Tìm kiếm sự kiện thành công'
             })
         })
@@ -179,6 +177,7 @@ module.exports.GET_SearchEvents = async (req, res, next) => {
 }
 
 
+// [POST] -> /api/event/uploadCK
 module.exports.POST_UploadCK = async (req, res, next) => {
     const file = req.file;
     if(!file) {
