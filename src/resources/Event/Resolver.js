@@ -49,7 +49,7 @@ module.exports.POST_CreateEvent = async (req, res, next) => {
 // [PUT] -> /api/event/update/:event_id
 module.exports.PUT_UpdateEvent = async (req, res, next) => {
     const { event_id } = req.params;
-    const { categories } = req.body;
+    const { name, categories } = req.body;
     const file = req.file;
 
     // Kiểm tra sự kiện tồn tại hay không
@@ -90,12 +90,14 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
 
     return await Event.findByIdAndUpdate(
         event_id,
-        { $set: { ...req.body, banner, categories: categories.split(',') } },
+        { $set: { ...req.body, slug: createSlug(name), banner, categories: categories.split(',') } },
         { returnOriginal: false },
     )
         .then( (event) => {
             // Destroy link banner cũ trên cloudinary
-            cloudinary.uploader.destroy(old_public_id);
+            if(file) {
+                cloudinary.uploader.destroy(old_public_id);
+            }
 
             return res.status(200).json({
                 success: true,

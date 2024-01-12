@@ -1,4 +1,4 @@
-const { POST_CreateTicket, PUT_UpdateTicket, DELETE_RemoveTicket, GET_TicketDetail, GET_SearchTickets } = require('./Resolver');
+const { POST_CreateTicket, PUT_UpdateTicket, DELETE_RemoveTicket, GET_TicketDetail, GET_SearchTickets, GET_GroupByEvent } = require('./Resolver');
 
 const router = require('express').Router();
 
@@ -11,5 +11,7 @@ router.delete('/delete/:ticket_id', DELETE_RemoveTicket);
 router.get('/detail/:ticket_code', GET_TicketDetail);
 
 router.get('/search', GET_SearchTickets);
+
+router.get('/group_by_event/:event_id', GET_GroupByEvent);
 
 module.exports = router;

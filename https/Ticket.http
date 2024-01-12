@@ -4,10 +4,10 @@ POST http://localhost:5000/api/ticket/create
 Content-Type: application/json 
 
 {
-    "name": "Vé cơ bản",
-    "event": "6596f37a3c2636a585e6908c",
-    "price": 200000,
-    "qty": 5
+    "name": "Vé vip",
+    "event": "6597959195ddc00510319c0e",
+    "price": 1000000,
+    "qty": 10
 }
 
 ###
@@ -31,3 +31,7 @@ GET http://localhost:5000/api/ticket/detail/7E36BE1F
 ###
 
 GET http://localhost:5000/api/ticket/search?
+
+###
+
+GET http://localhost:5000/api/ticket/group_by_event/6597959195ddc00510319c0e
