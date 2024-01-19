@@ -4,6 +4,7 @@ const Ticket = require('../Ticket/Model');
 // [POST] -> api/booking/create
 module.exports.POST_CreateBooking = async (req, res, next) => {
     const { tickets } = req.body;
+
     return await Booking.create({ ...req.body, tickets: tickets.split(','), status: 'pending' })
         .then(async (booking) => {
             if (!booking) {

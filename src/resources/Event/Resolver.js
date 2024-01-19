@@ -12,23 +12,21 @@ cloudinary.config({
 // [POST] -> /api/event/create
 module.exports.POST_CreateEvent = async (req, res, next) => {
     const file = req.file;
-    const { name, categories } = req.body;
+    const { event_name } = req.body;
     let image = await cloudinary.uploader.upload(file.path);
     if (!image) {
+        fs.unlinkSync(file.path);
         return res.status(500).json({
             success: false,
             msg: 'Cloudinary error',
         });
     }
 
-    fs.unlinkSync(file.path);
-
     return Event.create({
         ...req.body,
-        categories: categories.split(','),
         banner: image.url,
-        status: 'published',
-        slug: createSlug(name),
+        status: 'pending',
+        slug: createSlug(event_name),
     })
         .then((event) => {
             return res.status(200).json({
@@ -43,13 +41,16 @@ module.exports.POST_CreateEvent = async (req, res, next) => {
                 success: false,
                 msg: 'Tạo sự kiện thất bại: ' + err,
             });
-        });
+        })
+        .finally(() => {
+            fs.unlinkSync(file.path);
+        })
 };
 
 // [PUT] -> /api/event/update/:event_id
 module.exports.PUT_UpdateEvent = async (req, res, next) => {
     const { event_id } = req.params;
-    const { name, categories } = req.body;
+    const { event_name } = req.body;
     const file = req.file;
 
     // Kiểm tra sự kiện tồn tại hay không
@@ -90,7 +91,7 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
 
     return await Event.findByIdAndUpdate(
         event_id,
-        { $set: { ...req.body, slug: createSlug(name), banner, categories: categories.split(',') } },
+        { $set: { ...req.body, slug: createSlug(event_name), banner } },
         { returnOriginal: false },
     )
         .then( (event) => {

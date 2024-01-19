@@ -4,10 +4,10 @@ POST http://localhost:5000/api/ticket/create
 Content-Type: application/json 
 
 {
-    "name": "Vé vip",
+    "name": "Vé Premium",
     "event": "6597959195ddc00510319c0e",
-    "price": 1000000,
-    "qty": 10
+    "price": 5000000,
+    "qty": 5
 }
 
 ###

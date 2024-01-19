@@ -3,8 +3,8 @@ const { createSlug } = require('../../utils/crypto');
 
 // [POST] -> api/category/create
 module.exports.POST_CreateCategory = async (req, res, next) => {
-    const { name } = req.body;
-    return await Category.create({name, slug: createSlug(name)})
+    const { category_name } = req.body;
+    return await Category.create({category_name, category_code: Math.floor(Math.random() * 1000), slug: createSlug(category_name)})
         .then(category => {
             return res.status(200).json({
                 success: true,

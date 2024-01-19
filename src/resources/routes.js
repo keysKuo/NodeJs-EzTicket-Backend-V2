@@ -4,7 +4,8 @@ const Category_Router = require('./Category/Router');
 const Ticket_Router = require('./Ticket/Router');
 const Booking_Router = require('./Booking/Router');
 const Business_Router = require('./Business/Router');
-const { upload } = require('../middlewares/multer');
+const TicketType_Router = require('./TicketType/Router');
+
 
 const router = require('express').Router();
 
@@ -19,5 +20,7 @@ router.use('/ticket', Ticket_Router);
 router.use('/booking', Booking_Router);
 
 router.use('/business', Business_Router);
+
+router.use('/ticket_type', TicketType_Router);
 
 module.exports = router;

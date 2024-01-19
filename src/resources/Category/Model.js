@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const Category = new Schema(
     {
-        name: { type: String, required: true },
-        code: { type: Number, default: 1},
+        category_name: { type: String, required: true },
+        category_code: { type: Number, default: 1},
         slug: { type: String, required: true }
     },
     {

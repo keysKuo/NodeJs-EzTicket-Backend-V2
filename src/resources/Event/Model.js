@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const Event = new Schema(
     {
-        name: { type: String, required: true },
-        categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
+        event_name: { type: String, required: true },
+        category: { type: Schema.Types.ObjectId, ref: 'Category' },
         author: { type: Schema.Types.ObjectId, ref: 'User' },
         occur_date: { type: Date, required: true },
         time: { type: String, require: true },

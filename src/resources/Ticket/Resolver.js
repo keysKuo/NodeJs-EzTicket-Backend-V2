@@ -5,13 +5,13 @@ const Event = require('../Event/Model');
 
 // [POST] -> api/ticket/create
 module.exports.POST_CreateTicket = async (req, res, next) => {
-    const data = req.body;
+    const { ticket_type, ticket_name, qty } = req.body;
     let payloads = [];
     let oneMonthLater = new Date();
     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
 
-    for (let i = 0; i < data.qty; i++) {
-        payloads.push({ ...data, code: createCode(8).toUpperCase(), expiry: oneMonthLater, status: 'available' });
+    for (let i = 0; i < qty; i++) {
+        payloads.push({ ticket_type, ticket_code: createCode(8).toUpperCase(), expiry: oneMonthLater, status: 'available' });
     }
 
     return await Ticket.insertMany(payloads)
@@ -19,7 +19,7 @@ module.exports.POST_CreateTicket = async (req, res, next) => {
             return res.status(200).json({
                 success: true,
                 tickets,
-                msg: `Đã tạo thành công ${tickets.length} vé [${data.name}]`,
+                msg: `Đã tạo thành công ${tickets.length} vé ${ticket_name}`,
             });
         })
         .catch((err) => {
@@ -74,7 +74,7 @@ module.exports.DELETE_RemoveTicket = async (req, res, next) => {
 module.exports.GET_TicketDetail = async (req, res, next) => {
     const { ticket_id } = req.params;
 
-    return await Ticket.findOne({ _id: ticket_id }).populate({ path: 'event', select: 'name banner'})
+    return await Ticket.findOne({ _id: ticket_id }).populate({ path: 'ticket_type', populate: { path: 'event', select: 'event_name banner'}})
         .lean()
         .then((ticket) => {
             if (!ticket) {
