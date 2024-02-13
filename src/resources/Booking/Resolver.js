@@ -1,11 +1,24 @@
 const Booking = require('./Model');
 const Ticket = require('../Ticket/Model');
+const TicketType = require('../TicketType/Model');
 
 // [POST] -> api/booking/create
 module.exports.POST_CreateBooking = async (req, res, next) => {
-    const { tickets } = req.body;
+    const { items, payment_type, temporary_cost, customer } = req.body;
 
-    return await Booking.create({ ...req.body, tickets: tickets.split(','), status: 'pending' })
+    return await Booking.create({
+        tickets: items.map((item) => {
+            return {
+                ticket_type: item._id,
+                price: item.price,
+                qty: item.qty,
+            };
+        }),
+        payment_type,
+        temporary_cost,
+        customer,
+        status: 'pending',
+    })
         .then(async (booking) => {
             if (!booking) {
                 return res.status(404).json({
@@ -14,16 +27,18 @@ module.exports.POST_CreateBooking = async (req, res, next) => {
                 });
             }
 
-            await Ticket.updateMany({ _id: { $in: booking.tickets }, status: 'available' }, { status: 'pending' }).then(
-                (result) => {
-                    return res.status(200).json({
-                        success: true,
-                        booking,
-                        result,
-                        msg: `Tạo booking vé thành công`,
-                    });
-                },
-            );
+            for (const item of items) {
+                let ticket_type = await TicketType.findById(item._id);
+                ticket_type.n_stock -= item.qty;
+                await ticket_type.save();
+            }
+
+
+            return res.status(200).json({
+                success: true,
+                booking_id: booking._id,
+                msg: 'Tạo booking vé thành công',
+            });
         })
         .catch((err) => {
             return res.status(500).json({
@@ -96,16 +111,17 @@ module.exports.PUT_CancelBooking = async (req, res, next) => {
                 });
             }
 
-            await Ticket.updateMany({ _id: { $in: booking.tickets }, status: 'pending' }, { status: 'available' }).then(
-                (result) => {
-                    return res.status(200).json({
-                        success: true,
-                        booking,
-                        result,
-                        msg: `Hủy booking vé thành công`,
-                    });
-                },
-            );
+            for (const ticket of booking.tickets) {
+                let ticket_type = await TicketType.findById(ticket.ticket_type);
+                ticket_type.n_stock += ticket.qty;
+                await ticket_type.save();
+            }
+            
+            return res.status(200).json({
+                success: true,
+                booking,
+                msg: `Hủy booking vé thành công`,
+            });
         })
         .catch((err) => {
             return res.status(500).json({
@@ -120,7 +136,7 @@ module.exports.GET_BookingDetail = async (req, res, next) => {
     const { booking_id } = req.params;
 
     return await Booking.findById(booking_id)
-        .populate({ path: 'tickets' })
+        .populate({ path: 'tickets', populate: { path: 'ticket_type'} })
         .lean()
         .then((booking) => {
             if (!booking) {

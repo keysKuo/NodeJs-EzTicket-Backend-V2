@@ -1,6 +1,8 @@
-const { createSlug } = require('../../utils/crypto');
+const { createSlug, createCode } = require('../../utils/crypto');
 const fs = require('fs-extra');
 const Event = require('./Model');
+const TicketType = require('../TicketType/Model');
+const Ticket = require('../Ticket/Model');
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
@@ -27,6 +29,7 @@ module.exports.POST_CreateEvent = async (req, res, next) => {
         banner: image.url,
         status: 'pending',
         slug: createSlug(event_name),
+        ticket_types: [],
     })
         .then((event) => {
             return res.status(200).json({
@@ -44,13 +47,53 @@ module.exports.POST_CreateEvent = async (req, res, next) => {
         })
         .finally(() => {
             fs.unlinkSync(file.path);
-        })
+        });
+};
+
+// [PUT] -> /api/event/update/:event_id
+module.exports.PUT_UpdateTicketTypesOfEvent = async (req, res, next) => {
+    const { ticket_types } = req.body;
+
+    let types = JSON.parse(ticket_types);
+    
+    if (types.length !== 0) {
+        for (let i = 0; i < types.length; i++) {
+            if (types[i].is_delete) {
+                await TicketType.findByIdAndDelete(types[i]._id)
+                    .then(async (type) => {
+                        await Ticket.deleteMany({ ticket_type: type }).then((result) => {
+                            console.log(result);
+                        });
+                    })
+                    .catch((err) => {
+                        return res.status(500).json({
+                            success: false,
+                            msg: `Lỗi khi xóa vé: ` + err,
+                        });
+                    });
+            } else {
+                await TicketType.findByIdAndUpdate(types[i]._id, types[i])
+                    .then((type) => {
+                        
+                    })
+                    .catch((err) => {
+                        return res.status(500).json({
+                            success: false,
+                            msg: `Lỗi khi cập nhật vé: ` + err,
+                        });
+                    });
+            }
+        }
+    }
+
+    next();
 };
 
 // [PUT] -> /api/event/update/:event_id
 module.exports.PUT_UpdateEvent = async (req, res, next) => {
     const { event_id } = req.params;
-    const { event_name } = req.body;
+    const { event_name, ticket_types } = req.body;
+    // console.log(ticket_types);
     const file = req.file;
 
     // Kiểm tra sự kiện tồn tại hay không
@@ -70,7 +113,7 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
     // Lưu public id (cloudinary)
     let new_public_id = '';
     let old_public_id = url_parts[url_parts.length - 1].replace('.jpg', '');
-    
+
     if (file) {
         // Upload banner mới len cloudinary
         let image = await cloudinary.uploader.upload(file.path);
@@ -94,9 +137,9 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
         { $set: { ...req.body, slug: createSlug(event_name), banner } },
         { returnOriginal: false },
     )
-        .then( (event) => {
+        .then(async (event) => {
             // Destroy link banner cũ trên cloudinary
-            if(file) {
+            if (file) {
                 cloudinary.uploader.destroy(old_public_id);
             }
 
@@ -106,7 +149,7 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
                 msg: 'Cập nhật sự kiện thành công',
             });
         })
-        .catch( (err) => {
+        .catch((err) => {
             // Destroy banner mới trên cloudinary vì update lỗi
             cloudinary.uploader.destroy(new_public_id);
 
@@ -122,7 +165,7 @@ module.exports.DELETE_RemoveEvent = async (req, res, next) => {
     const { event_id } = req.params;
 
     return await Event.findByIdAndDelete(event_id)
-        .then(event => {
+        .then((event) => {
             let url_parts = event.banner.split('/');
             let public_id = url_parts[url_parts.length - 1].replace('.jpg', '');
 
@@ -133,61 +176,89 @@ module.exports.DELETE_RemoveEvent = async (req, res, next) => {
                 msg: 'Xóa sự kiện thành công',
             });
         })
-        .catch(err => {
+        .catch((err) => {
             return res.status(500).json({
                 success: false,
                 msg: 'Xóa sự kiện thất bại: ' + err,
             });
-        })
+        });
 };
 
 // [GET] -> api/event/detail/:event_id
 module.exports.GET_EventDetail = async (req, res, next) => {
     const { event_id } = req.params;
 
-    return await Event.findById(event_id).populate({ path: 'categories' }).lean()
-        .then(event => {
+    return await Event.findById(event_id)
+        .populate({ path: 'category' })
+        .lean()
+        .then(async (event) => {
+            let ticket_types = await TicketType.find({ event });
             return res.status(200).json({
                 success: true,
-                event: {...event, occur_date: event.occur_date.toLocaleDateString('en-CA')},
-                msg: 'Tìm kiếm sự kiện thành công'
-            })
+                event: { ...event, occur_date: event.occur_date.toLocaleDateString('en-CA'), ticket_types },
+                msg: 'Tìm kiếm sự kiện thành công',
+            });
         })
-        .catch(err => {
+        .catch((err) => {
             return res.status(404).json({
                 success: false,
-                msg: 'Tìm kiếm sự kiện thất bại: ' + err
-            })
+                msg: 'Tìm kiếm sự kiện thất bại: ' + err,
+            });
+        });
+};
+
+// [GET] -> api/event/view/:event_slug
+module.exports.GET_EventView = async (req, res, next) => {
+    const { event_slug } = req.params;
+
+    return await Event.findOne({ slug: event_slug })
+        .populate({ path: 'category' })
+        .lean()
+        .then(async (event) => {
+            let ticket_types = await TicketType.find({ event }).sort({ price: 1 })
+            return res.status(200).json({
+                success: true,
+                event: { ...event, occur_date: event.occur_date.toLocaleDateString('en-CA'), ticket_types },
+                msg: 'Tìm kiếm sự kiện thành công',
+            });
         })
-}
+        .catch((err) => {
+            return res.status(404).json({
+                success: false,
+                msg: 'Tìm kiếm sự kiện thất bại: ' + err,
+            });
+        });
+};
 
 // [GET] -> api/event/search?...
 module.exports.GET_SearchEvents = async (req, res, next) => {
-    return await Event.find({...req.query}).select({ introduce: 0 }).lean()
-        .then(events => {
+    return await Event.find({ ...req.query })
+        .select({ introduce: 0 })
+        .populate({ path: 'category' })
+        .lean()
+        .then((events) => {
             return res.status(200).json({
                 success: true,
                 events,
-                msg: `Đã tìm thấy ${events.length} sự kiện tương ứng`
-            })
+                msg: `Đã tìm thấy ${events.length} sự kiện tương ứng`,
+            });
         })
-        .catch(err => {
+        .catch((err) => {
             return res.status(500).json({
                 success: false,
-                msg: 'Lỗi hệ thống trong quá trình tìm kiếm: ' + err
-            })
-        })
-}
-
+                msg: 'Lỗi hệ thống trong quá trình tìm kiếm: ' + err,
+            });
+        });
+};
 
 // [POST] -> /api/event/uploadCK
 module.exports.POST_UploadCK = async (req, res, next) => {
     const file = req.file;
-    if(!file) {
+    if (!file) {
         return res.status(500).json({
             success: false,
-            msg: 'Không tìm thấy file'
-        })
+            msg: 'Không tìm thấy file',
+        });
     }
 
     let image = await cloudinary.uploader.upload(file.path);
@@ -202,6 +273,6 @@ module.exports.POST_UploadCK = async (req, res, next) => {
 
     return res.status(200).json({
         success: true,
-        url: image.url
-    })
-}
+        url: image.url,
+    });
+};

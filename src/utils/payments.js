@@ -78,7 +78,7 @@ const createStripeSession = async (options) => {
 
 // Params: options
 // {
-//     items (name, price, quantity, currency) - [Danh sách sản phẩm]
+//     items (name, price, quantity) - [Danh sách sản phẩm]
 //     total - [Tống tiền]
 //     success_url, cancel_url - [Callback url]
 // }

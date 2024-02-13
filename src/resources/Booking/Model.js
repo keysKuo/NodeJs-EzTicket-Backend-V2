@@ -3,15 +3,21 @@ const Schema = mongoose.Schema;
 
 const Booking = new Schema(
     {
-        tickets: [{ type: Schema.Types.ObjectId, ref: 'Ticket', required: true }],
-        payment_type: { type: String, required: true, enum: ['paypal', 'credit', 'cash'] },
-        total: { type: Number, required: true },
-        status: { type: String , required: true, enum: ['pending', 'completed', 'canceled'] },
+        tickets: [
+            {
+                ticket_type: { type: Schema.Types.ObjectId, ref: 'TicketType', required: true },
+                price: { type: Number, required: true },
+                qty: { type: Number, required: true },
+            },
+        ],
+        temporary_cost: { type: Number, required: true },
+        status: { type: String, required: true, enum: ['pending', 'completed', 'canceled'] },
+        payment_type: { type: String, required: true, enum: ['paypal', 'stripe', 'amazon'] },
         customer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     },
     {
-        timestamps: true
-    }
-)
+        timestamps: true,
+    },
+);
 
 module.exports = mongoose.model('Booking', Booking);

@@ -1,30 +1,35 @@
-async function test() {
-    // let result = await createStripeSession({
-    //     items: [
-    //         {
-    //             name: 'Product test',
-    //             price: 215000,
-    //             quantity: 2,
-    //             image: 'https://tressays.files.wordpress.com/2015/09/test-clip-art-cpa-school-test.png',
-    //         },
-    //     ],
-    //     success_url: 'http://localhost:3000/success',
-    //     cancel_url: 'http://localhost:3000/fail',
-    //     currency: 'vnd',
-    // });
-    // let result = await createPaypalSession({
-    //     items: [
-    //         {
-    //             name: 'Product test',
-    //             price: 215000,
-    //             quantity: 2,
-    //             currency: 'USD',
-    //         },
-    //     ],
-    //     success_url: 'http://localhost:3000/success',
-    //     cancel_url: 'http://localhost:3000/fail',
-    //     currency: 'vnd',
-    // });
-    console.log(result);
+let a = 'anagram';
+let b = 'nagaram';
+
+function isAnagram(a, b){
+    if(a.length !== b.length) {
+        return false;
+    }
+
+    let counter = {};
+
+    for(let i = 0; i < a.length; i++) {
+        if(!counter[a[i]]) {
+            counter[a[i]] = 0;
+        }
+
+        if(!counter[b[i]]) {
+            counter[b[i]] = 0
+        }
+
+        counter[a[i]] += 1;
+        counter[b[i]] -=1;
+    }
+    
+    console.log(counter);
+
+    for(const value of Object.values(counter)) {
+        if(value !== 0) {
+            return false;
+        }
+    }
+
+    return true;
 }
-exports.test = test;
+
+console.log(isAnagram(a, b));

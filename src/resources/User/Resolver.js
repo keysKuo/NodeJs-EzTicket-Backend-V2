@@ -79,9 +79,10 @@ module.exports.POST_ConfirmOTP = async (req, res, next) => {
             if (otp) {               
                 // Truy vấn thông tin user
                 let user = await User.findOne({ email }).lean();
-
+                // req.session.user = user;
+                
                 // Kí jwt rồi gửi về client
-                const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
+                const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
                 return res.status(200).json({ success: true, user, accessToken, msg: 'Xác nhân OTP thành công' });
             }
             else {
@@ -109,12 +110,14 @@ module.exports.ANY_AuthenticateToken = (req, res, next) => {
 
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
         if (err) {
-            return res.status(404).json({
+            // req.session.destroy();
+            return res.status(401).json({
                 success: false,
                 msg: 'Token invalid'
             })
         }
-        req.user = user;
+        
+        // req.session.user = user;
         next();
     });
 };
