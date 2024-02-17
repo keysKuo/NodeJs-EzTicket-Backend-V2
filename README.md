@@ -12,7 +12,7 @@ To run this project, make sure that your environment have all of these framework
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/keysKuo/ReactJs-EzTicket-Backend-V2
+   git clone https://github.com/keysKuo/NodeJs-EzTicket-Backend-V2.git
    ```
 2. Install NPM packages
    ```sh
