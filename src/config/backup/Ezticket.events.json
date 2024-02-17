@@ -1,0 +1,240 @@
+[{
+  "_id": {
+    "$oid": "65af7a089edbf9c6f8ea5bf3"
+  },
+  "event_name": "LỄ TRAO GIẢI LÀN SÓNG XANH 2023",
+  "category": {
+    "$oid": "65ae3d1bf8cd36a3d0dc78c3"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-01-24T00:00:00.000Z"
+  },
+  "time": "07:30 PM - 11:30 PM",
+  "location": "Nhà hát Hòa Bình",
+  "address": "240 Đường 3 Tháng 2, Phường 12, Quận 10, Thành Phố Hồ Chí Minh",
+  "introduce": "<p>Làn Sóng Xanh là giải thưởng âm nhạc thường niên, lâu đời nhất và là bảng đo nhiệt độ các ca khúc, các ca sĩ được yêu thích tại Việt Nam.&nbsp;</p><p>Tiếp nối sự thành công của các năm trước, chương trình hứa hẹn mang tới những màu sắc âm nhạc riêng biệt của thế hệ nghệ sĩ mới. Những màn trình diễn sáng tạo độc đáo, chỉ có duy nhất tại Lễ trao giải Làn Sóng Xanh 2023.</p><p>Bước sang năm thứ 26, VietNam Event Group (VEG) vinh dự được trở thành đơn vị phối hợp tổ chức cùng với Đài tiếng nói nhân dân TP.HCM, để có thể cùng nhau phát triển chương trình Làn Sóng Xanh trong tương lai.</p><p>------------------------------------------------------------</p><p><strong>TICKET PRICE:&nbsp;</strong></p><p><strong>27.12.2023</strong>: ZONE 1: 1.200.000 VND/ ZONE 4: 700.000 VND</p><p><strong>05.01.2024: </strong>ZONE 2: 1.000.000 VND/ ZONE 5: 500.000 VND</p><p><strong>07.01.2024: </strong>ZONE 3: 800.000 VND/ ZONE 6: 300.000 VND</p>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706546920/fb6p6vsqqxw8o7h5nuoi.jpg",
+  "status": "published",
+  "slug": "le-trao-giai-lan-song-xanh-2023-a1f16",
+  "createdAt": {
+    "$date": "2024-01-23T08:34:16.956Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-12T15:15:50.173Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+},
+{
+  "_id": {
+    "$oid": "65b66714c60e8a38627462c7"
+  },
+  "event_name": "SUPER JUNIOR-L.S.S. THE SHOW : Th3ee Guys in HO CHI MINH",
+  "category": {
+    "$oid": "65ae3d24f8cd36a3d0dc78c5"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-03-23T00:00:00.000Z"
+  },
+  "time": "18:00 - 20:00",
+  "location": "Military Zone 7 Indoor Sports Complex",
+  "address": "202 Đ. Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, Thành Phố Hồ Chí Minh",
+  "introduce": "<figure class=\"image\"><img style=\"aspect-ratio:1200/1200;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706452747/jgh2bspvqb8qjqqdz6zj.jpg\" width=\"1200\" height=\"1200\"></figure>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706452754/jdkuhri4muznzoynhowu.jpg",
+  "status": "pending",
+  "slug": "super-junior-l.s.s.-the-show-:-th3ee-guys-in-ho-chi-minh-d9820",
+  "createdAt": {
+    "$date": "2024-01-28T14:39:16.130Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-04T15:07:55.770Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+},
+{
+  "_id": {
+    "$oid": "65b7e037a538385959c740d3"
+  },
+  "event_name": "KHÚC DẠ TÂM",
+  "category": {
+    "$oid": "65ae3d24f8cd36a3d0dc78c5"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-02-10T00:00:00.000Z"
+  },
+  "time": "07:00 PM - 09:30 PM",
+  "location": "SÂN KHẤU XÓM KỊCH",
+  "address": "06 Huyền Trân Công Chúa phường Bến Thành quận 1, District 1, Ho Chi Minh City",
+  "introduce": "<p>Lần này KHÚC DẠ TÂM sẽ đưa ra một vấn đề nan giải của thời đại ngày nay. Đó là căn bệnh OVERTHINKING ! Một căn bệnh hầu như không chừa một ai từ đủ vị trí bất kỳ giàu nghèo&nbsp;trong xã hội đều dễ mắc phải căn bệnh này. Với nội dung sâu sắc, cách xử lý mới lạ của đạo diễn NSƯT Vũ Xuân Trang. Sẽ đưa khán giả đến với một cách nhìn nhận mới.</p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/800;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706549256/lz91vnsjd5vvawa9djbb.jpg\" width=\"1200\" height=\"800\"></figure><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/800;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706549282/lba6vv3z6nac53pkeas9.jpg\" width=\"1200\" height=\"800\"></figure><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/800;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706549285/qx7kx4fl692h8zaknpag.jpg\" width=\"1200\" height=\"800\"></figure>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706675572/ozotczkyxxiiri1m3vx8.jpg",
+  "status": "pending",
+  "slug": "khuc-da-tam-e7412",
+  "createdAt": {
+    "$date": "2024-01-29T17:28:23.894Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-31T06:57:33.046Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+},
+{
+  "_id": {
+    "$oid": "65b7e146a538385959c740e2"
+  },
+  "event_name": "[FLOWER 1969’s] WORKSHOP WAXTABLET - HỌC LÀM SÁP THƠM",
+  "category": {
+    "$oid": "65ae3d2ef8cd36a3d0dc78c7"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-01-26T00:00:00.000Z"
+  },
+  "time": "02:00 PM - 04:00 PM",
+  "location": "Flower 1969's - the seat cafe",
+  "address": "The Seat Cafe - 491/2 Lê Văn Sỹ, Phường 12, Quận 3, TP.HCM, District 3, Ho Chi Minh City",
+  "introduce": "<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;FLOWER 1969's&nbsp;WAX TABLET -&nbsp;HỌC LÀM SÁP THƠM&nbsp;</strong></p><p>Chuyên nghiên cứu độc quyền về Mùi&nbsp;Hương, Flower 1969's tạo ra Workshop Sáp Thơm nhằm mang đến cho khách hàng những trải nghiệm thú vị về&nbsp;hương thuần tự nhiên cũng như những nghiên cứu&nbsp;sáng tạo về độc đáo hương cá nhân&nbsp;qua sở thích, tính cách của Bạn.&nbsp;</p><p>Buổi học hướng dẫn cách làm sáp thơm từ những nguyên liệu hoàn toàn thiên nhiên. Bên cạnh đó, cung cấp cho học viên những kiến thức về nguồn gốc, hương thơm, cách lựa chọn sáp, tinh dầu, nguyên liệu&nbsp;phù hợp và&nbsp;mang được nét đặc trưng mùi hương theo sở thích.&nbsp;</p><p>Với hình thức xinh đẹp và đa dạng khuôn, sáp thơm&nbsp;luôn&nbsp;được ưa chuộng bởi vẻ ngoài xinh đẹp&nbsp;và chất lượng thiên nhiên.</p><p><i>Specializing in exclusive research on Fragrance, Flower 1969's created the Fragrance Wax Workshop to bring customers interesting experiences of natural scents as well as creative research on personal scents through preferences and temperament. your way.</i><br><i>The day teaches how to make scented wax from completely natural ingredients. Besides, it provides students with knowledge about the origin, fragrance, how to choose the right wax, essential oils, and ingredients and get a unique fragrance according to their preferences.</i><br><i>With its beautiful appearance and diverse scents, scented wax is always popular for its beautiful appearance and natural quality.</i></p><p>⚜️&nbsp;<strong>Thời&nbsp;gian:&nbsp;</strong></p><p><strong>Thứ 7 hàng tuần (14:00 - 16:00)</strong></p><p>⚜️&nbsp;<strong>Địa điểm:</strong><br><strong>The Seat Cafe - 491/2 Lê Văn Sỹ, Phường 12, Quận 3, TP.HCM</strong></p><p>⚜️&nbsp;<strong>Xem thêm thông tin của Chúng tôi tại:&nbsp;</strong></p><p>Bạn cần tư vấn hỗ trợ,&nbsp;trực tiếp liên hệ với nhà tổ chức của chúng tôi&nbsp;</p><p><strong><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t1e/1/16/1f33f.png\" alt=\"🌿\" width=\"16\" height=\"16\"> Facebook/Instagram: Flower 1969's <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t1e/1/16/1f33f.png\" alt=\"🌿\" width=\"16\" height=\"16\"></strong></p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t22/1/16/260e.png\" alt=\"☎\" width=\"16\" height=\"16\"> Hotline: 0931430627 - 0847137248</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t77/1/16/1f3e1.png\" alt=\"🏡\" width=\"16\" height=\"16\"> Văn Phòng: 5C Nguyễn Đình Chiểu, Quận 1, TP.HCM.</p><p><i>#Flower1969s #Soap&nbsp;#Essentialoil #Handmade #Organic #Xàphòng</i></p><p><i>*** Trong điều kiện sự kiện diễn ra bình thường, việc hoàn trả vé và hoàn tiền sẽ do Nhà tổ chức sự kiện quyết định!</i></p>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706549573/ultbsnkqkglkgcpmudzw.jpg",
+  "status": "pending",
+  "slug": "flower-1969's-workshop-waxtablet-hoc-lam-sap-thom",
+  "createdAt": {
+    "$date": "2024-01-29T17:32:54.137Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-31T06:57:33.046Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+},
+{
+  "_id": {
+    "$oid": "65b874d7430b290fc7efa657"
+  },
+  "event_name": "Triển lãm Hóa thạch",
+  "category": {
+    "$oid": "65ae3d2ef8cd36a3d0dc78c7"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-03-20T00:00:00.000Z"
+  },
+  "time": "08:00 AM - 04:30 PM",
+  "location": "Tầng 3 - Bảo tàng Hà Nội",
+  "address": "Đường Phạm Hùng, District Nam Tu Liem, Ha Noi City",
+  "introduce": "<p><strong>TRIỂN LÃM HOÁ THẠCH TẠI HÀ NỘI</strong></p><p>Sau Triển lãm hóa thạch đầu tiên tại Huế, vùng đất cổ sinh đã mở ra chào đón sự khám phá của công chúng Thủ đô, đem lại cho người xem những trải nghiệm đặc biệt khi tận mắt chiêm ngưỡng những sinh vật đã từng tồn tại cách đây hàng trăm triệu năm, những sinh vật đã tuyệt chủng, những sinh vật là nguồn cơn sự tiến hoá, phát triển của sinh giới đang được lưu giữ trong những lớp đá tưởng chừng vô tri.</p><p>Khoa học - Lịch sử - Tự nhiên và Nghệ thuật, hơn bao giờ hết thể hiện vai trò của mình trong việc kể lại câu chuyện về nguồn gốc sinh giới trên Trái Đất. Công nghệ 3D Mapping và Công nghệ Thực tế tăng cường&nbsp;AR,&nbsp;lần đầu tiên được sử dụng để tái hiện sống động hình ảnh sinh vật đã bị tuyệt diệt. Tại một thời khắc nào đó của lịch sử tiến hoá, khi loài người chưa xuất hiện, những sinh vật ấy cũng đã từng sống, hoạt động và thụ hưởng sự ưu ái</p><figure class=\"image\"><img style=\"aspect-ratio:1200/800;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706587493/nnph72ypkn74gewbzrty.jpg\" width=\"1200\" height=\"800\"></figure><figure class=\"image\"><img></figure>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706587349/oqeuett4hvmufdosmdbi.jpg",
+  "status": "pending",
+  "slug": "trien-lam-hoa-thach",
+  "createdAt": {
+    "$date": "2024-01-30T04:02:31.078Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-31T06:57:33.046Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+},
+{
+  "_id": {
+    "$oid": "65b9b68a39cc7ce9cb21a21b"
+  },
+  "event_name": "[Kịch Tết] SÂN KHẤU THIÊN ĐĂNG : DUYÊN THỆ",
+  "category": {
+    "$oid": "65ae3d24f8cd36a3d0dc78c5"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-02-28T00:00:00.000Z"
+  },
+  "time": "06:00 PM - 09:00 PM",
+  "location": "TẦNG 12B TÒA NHÀ IMC",
+  "address": "62 TRẦN QUANG KHẢI, Phường TÂN ĐỊNH, District 1, Ho Chi Minh City",
+  "introduce": "<p><i><strong>Sân khấu Nghệ Thuật Thiên Đăng&nbsp;</strong></i>&nbsp;trân trọng giới thiệu đến quý khán giả vở thoại kịch <strong>\"DUYÊN THỆ\"</strong>&nbsp;&nbsp;do NSƯT&nbsp;Hữu Châu&nbsp;đạo diễn.</p><p>Tác giả : Nguyễn Thị Minh Ngọc -&nbsp;𝘊𝘢̉𝘮 𝘵𝘢́𝘤 𝘵𝘩𝘦𝘰 𝘵𝘪𝘦̂̉𝘶 𝘵𝘩𝘶𝘺𝘦̂́𝘵 \"𝘉𝘰̉ 𝘝𝘰̛̣\" 𝘤𝘶̉𝘢 𝘯𝘩𝘢̀ 𝘷𝘢̆𝘯 𝘏𝘰̂̀ 𝘉𝘪𝘦̂̉𝘶 𝘊𝘩𝘢́𝘯𝘩</p><p>Với sự tham gia của các Nghệ sỹ:&nbsp; NSƯT Hữu Châu, NSƯT Thành Lộc, Phương Dung, Phi Phụng, Hoàng Trinh,&nbsp;Hương Giang, Lương Thế Thành, Lê Phương, Trương Hạ, Trang Tuyền, Thành Khôn, Nghiêm Nhi, Nhật Minh, Hữu Khang, Khải Nguyên, Bé Gia Tường.</p><p>Trân trọng kính mời quý khán giả.</p>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706669700/xfflmfk1vbvbyt4vny10.jpg",
+  "status": "pending",
+  "slug": "kich-tet-san-khau-thien-dang-duyen-the-35513",
+  "createdAt": {
+    "$date": "2024-01-31T02:55:06.729Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-31T06:57:33.046Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+},
+{
+  "_id": {
+    "$oid": "65b9b73a39cc7ce9cb21a22a"
+  },
+  "event_name": "[Kịch Tết] Sân Khấu Kịch Quốc Thảo - Nhạc Kịch: \"Vùng Đất Diệu Kỳ\"",
+  "category": {
+    "$oid": "65ae3d24f8cd36a3d0dc78c5"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-02-14T00:00:00.000Z"
+  },
+  "time": "04:00 PM - 06:30 PM",
+  "location": "Nhà Hát Phú Nhuận Mới",
+  "address": "Địa chỉ: 70-72 Nguyễn Văn Trỗi, Quận Phú Nhuận, Thành Phố Hồ Chí Minh",
+  "introduce": "<p><strong>Nhạc kịch&nbsp;Vùng Đất Diệu Kì</strong></p><p>Nhạc kịch thiếu nhi do Sân Khấu Kịch Quốc Thảo sản xuất là một trong những kịch mục phục vụ khán giả. Được dàn dựng công phu, câu chuyện hấp dẫn được phóng tác từ&nbsp;bộ phim hoạt hình đoạt giải Oscar và dàn dựng bởi đạo diễn Nghệ Sĩ Quốc Thảo</p><p><strong>Câu chuyện kể về:&nbsp;</strong>Gia đình Phép Thuật được thần ban cho ngọn nến ma thuật và nó&nbsp;<br>giúp con cháu dòng họ có năng lực hơn người. Riêng Vô Dụng – con gái út của Hai Gắn<br>Kết – không có may mắn đó. Tuy nhiên, cô luôn suy nghĩ tích cực, vui tươi dù bị nhiều<br>người xung quanh đánh giá thấp. Một ngày, sự cố xảy đến khiến gia đình Phép Thuật điêu<br>đứng. Vô đụng lần theo dấu vết đi tìm cậu Út Đen Đủi – người có khả năng nhìn trước</p>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706669875/fkhd7ghxvwbzip1d9cfl.jpg",
+  "status": "pending",
+  "slug": "kich-tet-san-khau-kich-quoc-thao-nhac-kich:-\"vung-dat-dieu-ky\"",
+  "createdAt": {
+    "$date": "2024-01-31T02:58:02.508Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-31T06:57:33.046Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+},
+{
+  "_id": {
+    "$oid": "65b9b7bd39cc7ce9cb21a22f"
+  },
+  "event_name": "[SHOW TẾT] - [LULULOLA SHOW] MYRA TRẦN • HOÀNG HẢI | MÙNG 4 TẾT",
+  "category": {
+    "$oid": "65ae3d1bf8cd36a3d0dc78c3"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-02-14T00:00:00.000Z"
+  },
+  "time": "17:15 - 19:15",
+  "location": "Lululola Coffee",
+  "address": "Đường 3/4, Đồi Cà Ri Dê, Phường 3, Thành Phố Đà Lạt, Tỉnh Lâm Đồng",
+  "introduce": "<p><strong>Liveshow Myra Trần &amp; Hoàng Hải</strong></p><p>Lululola Show - Hơn cả âm nhạc, không gian lãng mạn đậm chất thơ Đà Lạt bao trọn hình ảnh thung lũng Đà Lạt, được ngắm nhìn khoảng khắc hoàng hôn thơ mộng đến khi Đà Lạt về đêm siêu lãng mạn, được giao lưu với thần tượng một cách chân thật và gần gũi nhất trong không gian ấm áp và không khí se lạnh của Đà Lạt. Tất cả sẽ&nbsp; mang đến một đêm nhạc ấn tượng mà bạn không thể quên khi đến với Đà Lạt.</p><p><i><strong>Qúy Khách sẽ được Lululola gửi thông tin số ghế và xác nhận đặt chỗ thành công!</strong></i></p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/848;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706669987/pr1f57vc8l3mgqw3zzzz.jpg\" width=\"1200\" height=\"848\"></figure><figure class=\"image\"><img style=\"aspect-ratio:1200/900;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706670002/e9wn2k8yguoy9zyblbzr.jpg\" width=\"1200\" height=\"900\"></figure>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706670006/hamyuhzt5vcqlq3pdj4u.jpg",
+  "status": "pending",
+  "slug": "show-tet-lululola-show-myra-tran-*-hoang-hai-or-mung-4-tet",
+  "createdAt": {
+    "$date": "2024-01-31T03:00:13.807Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-31T06:57:33.046Z"
+  },
+  "__v": 0,
+  "ticket_types": []
+}]
