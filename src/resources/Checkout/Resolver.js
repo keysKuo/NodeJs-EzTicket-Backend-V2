@@ -11,15 +11,19 @@ const secretKey = process.env.ACCESS_TOKEN_SECRET;
 // [POST] -> api/checkout/access_payment
 module.exports.POST_CreatePaymentSession = async (req, res, next) => {
     const { event_id, booking_id, total, owner } = req.body;
-    
-    const booking = await Booking.findById(booking_id).populate({ path: 'tickets', populate: { path: 'ticket_type' } });
 
-    if(booking.status === 'completed') {
+    const booking = await Booking.findById(booking_id).populate({
+        path: 'tickets',
+        populate: { path: 'ticket_type', populate: { path: 'event', select: 'slug' } },
+    });
+    const event_slug = booking.tickets[0].ticket_type.event.slug;
+
+    if (booking.status === 'completed') {
         return res.status(200).json({
             success: false,
             is_paid: true,
-            msg: 'Đơn hàng đã thanh toán'
-        })
+            msg: 'Đơn hàng đã thanh toán',
+        });
     }
 
     const token = CRYPTO.encryptAES(
@@ -47,7 +51,7 @@ module.exports.POST_CreatePaymentSession = async (req, res, next) => {
                     };
                 }),
                 success_url: `http://localhost:3000/checkout/success?token=${token}`,
-                cancel_url: `http://localhost:3000/event/${booking.slug}/booking/${booking_id}/checkout`,
+                cancel_url: `http://localhost:3000/event/${event_slug}/booking/${booking_id}/checkout`,
             });
             break;
         }
@@ -63,7 +67,7 @@ module.exports.POST_CreatePaymentSession = async (req, res, next) => {
                 }),
                 total: total * rate,
                 success_url: `http://localhost:3000/checkout/success?token=${token}`,
-                cancel_url: `http://localhost:3000/event/${booking.slug}/booking/${booking_id}/checkout`,
+                cancel_url: `http://localhost:3000/event/${event_slug}/booking/${booking_id}/checkout`,
             });
             break;
         }
@@ -104,12 +108,12 @@ module.exports.POST_CreateCheckout = async (req, res, next) => {
                         let ticket_type = await TicketType.findById(ticket.ticket_type);
                         ticket_type.n_sold += ticket.qty;
                         ticket_type.save();
-                        
+
                         // Insert Tickets for Booking
                         let payloads = [];
                         let oneMonthLater = new Date();
                         oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
-                       
+
                         for (let i = 0; i < ticket.qty; i++) {
                             payloads.push({
                                 owner: owner,
@@ -120,7 +124,7 @@ module.exports.POST_CreateCheckout = async (req, res, next) => {
                             });
                         }
 
-                        Ticket.insertMany(payloads)
+                        Ticket.insertMany(payloads);
                     }
                 },
             );

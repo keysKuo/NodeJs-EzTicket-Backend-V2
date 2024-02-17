@@ -30,7 +30,7 @@ GET http://localhost:5000/api/ticket/detail/7E36BE1F
 
 ###
 
-GET http://localhost:5000/api/ticket/search?
+GET http://localhost:5000/api/ticket/search?owner=65954af7cd32fb0977100004
 
 ###
 

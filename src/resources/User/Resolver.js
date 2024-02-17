@@ -82,7 +82,7 @@ module.exports.POST_ConfirmOTP = async (req, res, next) => {
                 // req.session.user = user;
                 
                 // Kí jwt rồi gửi về client
-                const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
+                const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '72h' });
                 return res.status(200).json({ success: true, user, accessToken, msg: 'Xác nhân OTP thành công' });
             }
             else {
