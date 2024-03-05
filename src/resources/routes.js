@@ -6,7 +6,7 @@ const Booking_Router = require('./Booking/Router');
 const Business_Router = require('./Business/Router');
 const TicketType_Router = require('./TicketType/Router');
 const Checkout_Router = require('./Checkout/Router');
-
+const Admin_Router = require('./Admin/Router');
 
 const router = require('express').Router();
 
@@ -25,5 +25,7 @@ router.use('/business', Business_Router);
 router.use('/ticket_type', TicketType_Router);
 
 router.use('/checkout', Checkout_Router);
+
+router.use('/admin', Admin_Router);
 
 module.exports = router;

@@ -117,7 +117,7 @@ module.exports.ANY_AuthenticateToken = (req, res, next) => {
             })
         }
         
-        // req.session.user = user;
+        req.user = user;
         next();
     });
 };

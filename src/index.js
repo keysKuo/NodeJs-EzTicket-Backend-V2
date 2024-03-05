@@ -15,7 +15,7 @@ setInterval(() => {
 
     Booking.find({ status: 'pending' })
         .where('createdAt')
-        .lte(current - 10 * 60 * 1000)
+        .lte(current - 15 * 60 * 1000)
         .then(async (bookings) => {
             for (const booking of bookings) {
                 booking.status = 'canceled';
@@ -31,7 +31,8 @@ setInterval(() => {
         });
 }, 1000 * 60 * 5);
 
-app.get('/', async (req, res, next) => { // await Event.updateMany({}, { ticket_types: []})
+app.get('/', async (req, res, next) => {
+    // await Event.updateMany({}, { ticket_types: []})
     return res.json('Ezticket API');
 });
 

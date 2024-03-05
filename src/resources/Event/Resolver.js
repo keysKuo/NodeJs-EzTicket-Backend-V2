@@ -91,9 +91,10 @@ module.exports.PUT_UpdateTicketTypesOfEvent = async (req, res, next) => {
 
 // [PUT] -> /api/event/update/:event_id
 module.exports.PUT_UpdateEvent = async (req, res, next) => {
+    const user = req.user;
     const { event_id } = req.params;
     const { event_name, ticket_types } = req.body;
-    // console.log(ticket_types);
+    // console.log(event_name);
     const file = req.file;
 
     // Kiểm tra sự kiện tồn tại hay không
@@ -103,6 +104,13 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
         return res.status(404).json({
             success: false,
             msg: 'Không tìm thấy sự kiện',
+        });
+    }
+
+    if(event.author._id !== user._id) {
+        return res.status(300).json({
+            success: false,
+            msg: 'Bạn không đủ thẩm quyền để thay đổi',
         });
     }
 
