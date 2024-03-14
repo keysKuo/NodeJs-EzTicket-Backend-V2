@@ -107,13 +107,6 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
         });
     }
 
-    if(event.author._id !== user._id) {
-        return res.status(300).json({
-            success: false,
-            msg: 'Bạn không đủ thẩm quyền để thay đổi',
-        });
-    }
-
     // Tạm gắn banner cũ
     let banner = event.banner;
     let url_parts = banner.split('/');

@@ -14,6 +14,7 @@ module.exports.POST_CreateBooking = async (req, res, next) => {
                 qty: item.qty,
             };
         }),
+        trade_code: `EZ${Math.floor(Math.random() * 99999999)}`,
         payment_type,
         temporary_cost,
         customer,
@@ -32,7 +33,6 @@ module.exports.POST_CreateBooking = async (req, res, next) => {
                 ticket_type.n_stock -= item.qty;
                 await ticket_type.save();
             }
-
 
             return res.status(200).json({
                 success: true,
@@ -116,7 +116,7 @@ module.exports.PUT_CancelBooking = async (req, res, next) => {
                 ticket_type.n_stock += ticket.qty;
                 await ticket_type.save();
             }
-            
+
             return res.status(200).json({
                 success: true,
                 booking,
@@ -136,7 +136,7 @@ module.exports.GET_BookingDetail = async (req, res, next) => {
     const { booking_id } = req.params;
 
     return await Booking.findById(booking_id)
-        .populate({ path: 'tickets', populate: { path: 'ticket_type'} })
+        .populate({ path: 'tickets', populate: { path: 'ticket_type' } })
         .lean()
         .then((booking) => {
             if (!booking) {
@@ -162,11 +162,17 @@ module.exports.GET_BookingDetail = async (req, res, next) => {
 // [GET] -> api/booking/search?
 module.exports.GET_SearchBookings = async (req, res, next) => {
     return await Booking.find({ ...req.query })
+        .populate({ path: 'tickets.ticket_type', populate: { path: 'event', select: '_id banner event_name' } })
         .lean()
         .then((bookings) => {
             return res.status(200).json({
                 success: true,
-                bookings,
+                bookings: bookings.map((booking) => {
+                    return {
+                        ...booking,
+                        event: booking.tickets[0].ticket_type.event,
+                    };
+                }),
                 msg: `Đã tìm thấy ${bookings.length} booking vé`,
             });
         })

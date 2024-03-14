@@ -5,13 +5,13 @@ const Event = require('../Event/Model');
 
 // [POST] -> api/ticket/create
 module.exports.POST_CreateTicket = async (req, res, next) => {
-    const { ticket_type, ticket_name, qty } = req.body;
+    const { trade_code, ticket_type, ticket_name, qty } = req.body;
     let payloads = [];
     let oneMonthLater = new Date();
     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
 
     for (let i = 0; i < qty; i++) {
-        payloads.push({ ticket_type, ticket_code: createCode(8).toUpperCase(), expiry: oneMonthLater, status: 'available' });
+        payloads.push({ trade_code, ticket_type, ticket_code: createCode(8).toUpperCase(), expiry: oneMonthLater, status: 'available' });
     }
 
     return await Ticket.insertMany(payloads)

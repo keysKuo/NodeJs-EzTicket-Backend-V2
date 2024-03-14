@@ -6,9 +6,9 @@ const { ANY_AuthenticateToken } = require('../User/Resolver');
 
 router.post('/create', upload.single('file'), Validate_CreateEvent, POST_CreateEvent);
 
-router.put('/update/:event_id', ANY_AuthenticateToken, upload.single('file'), PUT_UpdateTicketTypesOfEvent, PUT_UpdateEvent);
+router.put('/update/:event_id', upload.single('file'), PUT_UpdateTicketTypesOfEvent, PUT_UpdateEvent);
 
-router.delete('/delete/:event_id', ANY_AuthenticateToken, DELETE_RemoveEvent);
+router.delete('/delete/:event_id', DELETE_RemoveEvent);
 
 router.get('/detail/:event_id', GET_EventDetail);
 

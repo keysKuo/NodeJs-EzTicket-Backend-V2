@@ -117,6 +117,7 @@ module.exports.POST_CreateCheckout = async (req, res, next) => {
                         for (let i = 0; i < ticket.qty; i++) {
                             payloads.push({
                                 owner: owner,
+                                trade_code: booking.trade_code,
                                 ticket_type: ticket.ticket_type,
                                 ticket_code: CRYPTO.createCode(8).toUpperCase(),
                                 expiry: oneMonthLater,
