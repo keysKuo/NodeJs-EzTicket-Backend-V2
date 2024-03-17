@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const Event = require('./Model');
 const TicketType = require('../TicketType/Model');
 const Ticket = require('../Ticket/Model');
+const Category = require('../Category/Model');
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
@@ -252,6 +253,48 @@ module.exports.GET_SearchEvents = async (req, res, next) => {
             });
         });
 };
+
+// [GET] -> api/event/search_by_category?slug=...
+module.exports.GET_SearchEventsByCategory = async (req, res, next) => {
+    const { slug, page } = req.query;
+    
+    const category = await Category.findOne({slug});
+
+    if(!category) {
+        return res.status(404).json({
+            success: false,
+            msg: 'Không tìm thấy danh mục này'
+        })
+    }
+    
+    const limit = 20;
+    const skip = page ? limit * (parseInt(page) - 1) : 0;
+    return await Event.find({ category })
+        .populate('category')
+        .select({ introduce: 0 })
+        .skip(skip)
+        .limit(limit)
+        .lean()
+        .then(async events => {
+            let return_events = [];
+            for(let i in events) {
+                let ticket_types = await TicketType.find({event: events[i]}).sort({ price: 1 }).lean();
+                return_events.push({...events[i], ticket_types});
+            }
+
+            return res.status(200).json({
+                success: true,
+                events: return_events,
+                msg: `Tìm thấy ${events.length} sự kiện tương ứng`
+            })
+        })
+        .catch(err => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Tìm kiếm sự kiện thất bại: ' + err
+            })
+        })
+}
 
 // [POST] -> /api/event/uploadCK
 module.exports.POST_UploadCK = async (req, res, next) => {

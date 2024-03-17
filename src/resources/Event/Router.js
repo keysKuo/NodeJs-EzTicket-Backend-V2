@@ -8,6 +8,7 @@ const {
     POST_UploadCK,
     GET_EventView,
     PUT_UpdateTicketTypesOfEvent,
+    GET_SearchEventsByCategory,
 } = require('./Resolver');
 const { upload } = require('../../middlewares/multer');
 const { Validate_CreateEvent } = require('./Validator');
@@ -32,6 +33,8 @@ router.get('/detail/:event_id', GET_EventDetail);
 router.get('/view/:event_slug', GET_EventView);
 
 router.get('/search', GET_SearchEvents);
+
+router.get('/search_by_category', GET_SearchEventsByCategory);
 
 router.post('/uploadCK', upload.single('uploadImg'), POST_UploadCK);
 
