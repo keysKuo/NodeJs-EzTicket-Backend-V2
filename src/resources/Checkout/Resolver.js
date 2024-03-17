@@ -5,7 +5,7 @@ const Ticket = require('../Ticket/Model');
 const PAYMENTS = require('../../utils/payments');
 const CRYPTO = require('../../utils/crypto');
 require('dotenv').config();
-
+const DOMAIN_URL = process.env.DOMAIN_URL || 'http://localhost:3000'
 const secretKey = process.env.ACCESS_TOKEN_SECRET;
 
 // [POST] -> api/checkout/access_payment
@@ -50,8 +50,8 @@ module.exports.POST_CreatePaymentSession = async (req, res, next) => {
                         image: `https://static.vecteezy.com/system/resources/previews/012/027/723/non_2x/admit-one-ticket-icon-black-and-white-isolated-wite-free-vector.jpg`,
                     };
                 }),
-                success_url: `http://localhost:3000/checkout/success?token=${token}`,
-                cancel_url: `http://localhost:3000/event/${event_slug}/booking/${booking_id}/checkout`,
+                success_url: `${DOMAIN_URL}/checkout/success?token=${token}`,
+                cancel_url: `${DOMAIN_URL}/event/${event_slug}/booking/${booking_id}/checkout`,
             });
             break;
         }
@@ -66,8 +66,8 @@ module.exports.POST_CreatePaymentSession = async (req, res, next) => {
                     };
                 }),
                 total: total * rate,
-                success_url: `http://localhost:3000/checkout/success?token=${token}`,
-                cancel_url: `http://localhost:3000/event/${event_slug}/booking/${booking_id}/checkout`,
+                success_url: `${DOMAIN_URL}/checkout/success?token=${token}`,
+                cancel_url: `${DOMAIN_URL}/event/${event_slug}/booking/${booking_id}/checkout`,
             });
             break;
         }
