@@ -16,8 +16,10 @@ module.exports.mailForm = (options) => {
     let caption = options.caption || '';
     let content = options.content || '';
     
-    return `<div 
-        style="width: 350px; margin: 0 auto;
+    return `
+    <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+    <div 
+        style="min-width: 350px; margin: 0 auto;
         text-align: center; font-family: 'Google Sans', Roboto, sans-serif;
         min-height: 300px; padding: 40px 20px;
         border-width: thin; border-style: solid; border-color: #dadce0; border-radius: 8px">

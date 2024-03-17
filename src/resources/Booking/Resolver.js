@@ -163,6 +163,7 @@ module.exports.GET_BookingDetail = async (req, res, next) => {
 module.exports.GET_SearchBookings = async (req, res, next) => {
     return await Booking.find({ ...req.query })
         .populate({ path: 'tickets.ticket_type', populate: { path: 'event', select: '_id banner event_name' } })
+        .sort({ createdAt: -1 })
         .lean()
         .then((bookings) => {
             return res.status(200).json({

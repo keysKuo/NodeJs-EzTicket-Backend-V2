@@ -13,9 +13,9 @@ cloudinary.config({
 
 // [POST] -> /api/event/create
 module.exports.POST_CreateEvent = async (req, res, next) => {
-    const file = req.file;
+    const { license, banner } = req.files;
     const { event_name } = req.body;
-    let image = await cloudinary.uploader.upload(file.path);
+    let image = await cloudinary.uploader.upload(banner[0].path);
     if (!image) {
         fs.unlinkSync(file.path);
         return res.status(500).json({
@@ -27,9 +27,9 @@ module.exports.POST_CreateEvent = async (req, res, next) => {
     return Event.create({
         ...req.body,
         banner: image.url,
+        license: 'uploads/' + license[0].filename,
         status: 'pending',
         slug: createSlug(event_name),
-        ticket_types: [],
     })
         .then((event) => {
             return res.status(200).json({
@@ -46,7 +46,7 @@ module.exports.POST_CreateEvent = async (req, res, next) => {
             });
         })
         .finally(() => {
-            fs.unlinkSync(file.path);
+            fs.unlinkSync(banner[0].path);
         });
 };
 
@@ -235,6 +235,7 @@ module.exports.GET_EventView = async (req, res, next) => {
 module.exports.GET_SearchEvents = async (req, res, next) => {
     return await Event.find({ ...req.query })
         .select({ introduce: 0 })
+        .sort({ createdAt: -1 })
         .populate({ path: 'category' })
         .lean()
         .then((events) => {

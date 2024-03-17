@@ -43,3 +43,22 @@ module.exports.PUT_UpdateBusiness = async (req, res, next) => {
         })
 }
 
+// [GET] -> api/business/detail/:business_id
+module.exports.GET_BusinessDetail = async (req, res, next) => {
+    const { business_id } = req.params;
+
+    return await Business.findById(business_id)
+        .then(business => {
+            return res.status(200).json({
+                success: true,
+                business,
+                msg: 'Tìm kiếm thông tin tổ chức thành công'
+            })
+        })
+        .catch(err => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Tìm kiếm thông tin tổ chức thất bại: ' + err
+            })
+        })
+}

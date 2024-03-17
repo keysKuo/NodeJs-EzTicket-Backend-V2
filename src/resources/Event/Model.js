@@ -12,6 +12,7 @@ const Event = new Schema(
         address: { type: String, required: true },
         introduce: { type: String },
         banner: { type: String, required: true },
+        license: { type: String },
         status: { type: String, default: "published", enum: ['published', 'pending', 'ended'] }, // pending -> published -> ended 
         slug: { type: String, required: true },
     },

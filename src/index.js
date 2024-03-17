@@ -5,6 +5,7 @@ const db = require('./config/db/database');
 const routes = require('./resources/routes');
 const Booking = require('./resources/Booking/Model');
 const TicketType = require('./resources/TicketType/Model');
+// const Event = require('./resources/Event/Model');
 
 db.connect();
 
@@ -33,6 +34,7 @@ setInterval(() => {
 
 app.get('/', async (req, res, next) => {
     // await Event.updateMany({}, { ticket_types: []})
+    // await Event.updateMany({}, { license: '/uploads/giayphep.pdf' })
     return res.json('Ezticket API');
 });
 

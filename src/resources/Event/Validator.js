@@ -4,13 +4,13 @@ const { createSlug } = require('../../utils/crypto')
 
 
 module.exports.Validate_CreateEvent = async (req, res, next) => {
-    const file = req.file;
+    const { license, banner } = req.files;
     const { author } = req.body;
     
-    if(!file) {
+    if(!license || !banner) {
         return res.status(300).json({
             success: false,
-            msg: 'Cần ít nhất 1 banner cho sự kiện'
+            msg: 'Vui lòng điền đầy đủ thông tin'
         })
     }
 

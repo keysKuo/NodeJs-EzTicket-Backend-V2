@@ -15,18 +15,19 @@
   "time": "07:30 PM - 11:30 PM",
   "location": "Nhà hát Hòa Bình",
   "address": "240 Đường 3 Tháng 2, Phường 12, Quận 10, Thành Phố Hồ Chí Minh",
-  "introduce": "<p>Làn Sóng Xanh là giải thưởng âm nhạc thường niên, lâu đời nhất và là bảng đo nhiệt độ các ca khúc, các ca sĩ được yêu thích tại Việt Nam.&nbsp;</p><p>Tiếp nối sự thành công của các năm trước, chương trình hứa hẹn mang tới những màu sắc âm nhạc riêng biệt của thế hệ nghệ sĩ mới. Những màn trình diễn sáng tạo độc đáo, chỉ có duy nhất tại Lễ trao giải Làn Sóng Xanh 2023.</p><p>Bước sang năm thứ 26, VietNam Event Group (VEG) vinh dự được trở thành đơn vị phối hợp tổ chức cùng với Đài tiếng nói nhân dân TP.HCM, để có thể cùng nhau phát triển chương trình Làn Sóng Xanh trong tương lai.</p><p>------------------------------------------------------------</p><p><strong>TICKET PRICE:&nbsp;</strong></p><p><strong>27.12.2023</strong>: ZONE 1: 1.200.000 VND/ ZONE 4: 700.000 VND</p><p><strong>05.01.2024: </strong>ZONE 2: 1.000.000 VND/ ZONE 5: 500.000 VND</p><p><strong>07.01.2024: </strong>ZONE 3: 800.000 VND/ ZONE 6: 300.000 VND</p>",
+  "introduce": "<p>Làn Sóng Xanh là giải thưởng âm nhạc thường niên, lâu đời nhất và là bảng đo nhiệt độ các ca khúc, các ca sĩ được yêu thích tại Việt Nam.&nbsp;</p><p>Tiếp nối sự thành công của các năm trước, chương trình hứa hẹn mang tới những màu sắc âm nhạc riêng biệt của thế hệ nghệ sĩ mới. Những màn trình diễn sáng tạo độc đáo, chỉ có duy nhất tại Lễ trao giải Làn Sóng Xanh 2023.</p><p>Bước sang năm thứ 26, VietNam Event Group (VEG) vinh dự được trở thành đơn vị phối hợp tổ chức cùng với Đài tiếng nói nhân dân TP.HCM, để có thể cùng nhau phát triển chương trình Làn Sóng Xanh trong tương lai.</p><p>------------------------------------------------------------</p><p><strong>TICKET PRICE:&nbsp;</strong></p><p><strong>27.12.2023</strong>: ZONE 1: 1.200.000 VND/ ZONE 4: 700.000 VND</p><p><strong>05.01.2024: </strong>ZONE 2: 1.000.000 VND/ ZONE 5: 500.000 VND</p><p><strong>07.01.2024: </strong>ZONE 3: 800.000 VND/ ZONE 6: 300.000 VND</p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1600/1066;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1708194559/rqmxrjky659trnabokzo.jpg\" width=\"1600\" height=\"1066\"></figure><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1600/1066;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1708194563/qc3paqrbzw0rijy6uk3k.jpg\" width=\"1600\" height=\"1066\"></figure>",
   "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706546920/fb6p6vsqqxw8o7h5nuoi.jpg",
   "status": "published",
-  "slug": "le-trao-giai-lan-song-xanh-2023-a1f16",
+  "slug": "le-trao-giai-lan-song-xanh-2023-74070",
   "createdAt": {
     "$date": "2024-01-23T08:34:16.956Z"
   },
   "updatedAt": {
-    "$date": "2024-02-12T15:15:50.173Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
 },
 {
   "_id": {
@@ -47,16 +48,17 @@
   "address": "202 Đ. Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, Thành Phố Hồ Chí Minh",
   "introduce": "<figure class=\"image\"><img style=\"aspect-ratio:1200/1200;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706452747/jgh2bspvqb8qjqqdz6zj.jpg\" width=\"1200\" height=\"1200\"></figure>",
   "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706452754/jdkuhri4muznzoynhowu.jpg",
-  "status": "pending",
-  "slug": "super-junior-l.s.s.-the-show-:-th3ee-guys-in-ho-chi-minh-d9820",
+  "status": "published",
+  "slug": "super-junior-l.s.s.-the-show-:-th3ee-guys-in-ho-chi-minh-ce706",
   "createdAt": {
     "$date": "2024-01-28T14:39:16.130Z"
   },
   "updatedAt": {
-    "$date": "2024-02-04T15:07:55.770Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
 },
 {
   "_id": {
@@ -83,10 +85,11 @@
     "$date": "2024-01-29T17:28:23.894Z"
   },
   "updatedAt": {
-    "$date": "2024-01-31T06:57:33.046Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
 },
 {
   "_id": {
@@ -113,10 +116,11 @@
     "$date": "2024-01-29T17:32:54.137Z"
   },
   "updatedAt": {
-    "$date": "2024-01-31T06:57:33.046Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
 },
 {
   "_id": {
@@ -137,16 +141,17 @@
   "address": "Đường Phạm Hùng, District Nam Tu Liem, Ha Noi City",
   "introduce": "<p><strong>TRIỂN LÃM HOÁ THẠCH TẠI HÀ NỘI</strong></p><p>Sau Triển lãm hóa thạch đầu tiên tại Huế, vùng đất cổ sinh đã mở ra chào đón sự khám phá của công chúng Thủ đô, đem lại cho người xem những trải nghiệm đặc biệt khi tận mắt chiêm ngưỡng những sinh vật đã từng tồn tại cách đây hàng trăm triệu năm, những sinh vật đã tuyệt chủng, những sinh vật là nguồn cơn sự tiến hoá, phát triển của sinh giới đang được lưu giữ trong những lớp đá tưởng chừng vô tri.</p><p>Khoa học - Lịch sử - Tự nhiên và Nghệ thuật, hơn bao giờ hết thể hiện vai trò của mình trong việc kể lại câu chuyện về nguồn gốc sinh giới trên Trái Đất. Công nghệ 3D Mapping và Công nghệ Thực tế tăng cường&nbsp;AR,&nbsp;lần đầu tiên được sử dụng để tái hiện sống động hình ảnh sinh vật đã bị tuyệt diệt. Tại một thời khắc nào đó của lịch sử tiến hoá, khi loài người chưa xuất hiện, những sinh vật ấy cũng đã từng sống, hoạt động và thụ hưởng sự ưu ái</p><figure class=\"image\"><img style=\"aspect-ratio:1200/800;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706587493/nnph72ypkn74gewbzrty.jpg\" width=\"1200\" height=\"800\"></figure><figure class=\"image\"><img></figure>",
   "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706587349/oqeuett4hvmufdosmdbi.jpg",
-  "status": "pending",
-  "slug": "trien-lam-hoa-thach",
+  "status": "published",
+  "slug": "trien-lam-hoa-thach-80dee",
   "createdAt": {
     "$date": "2024-01-30T04:02:31.078Z"
   },
   "updatedAt": {
-    "$date": "2024-01-31T06:57:33.046Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
 },
 {
   "_id": {
@@ -173,10 +178,11 @@
     "$date": "2024-01-31T02:55:06.729Z"
   },
   "updatedAt": {
-    "$date": "2024-01-31T06:57:33.046Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
 },
 {
   "_id": {
@@ -197,16 +203,17 @@
   "address": "Địa chỉ: 70-72 Nguyễn Văn Trỗi, Quận Phú Nhuận, Thành Phố Hồ Chí Minh",
   "introduce": "<p><strong>Nhạc kịch&nbsp;Vùng Đất Diệu Kì</strong></p><p>Nhạc kịch thiếu nhi do Sân Khấu Kịch Quốc Thảo sản xuất là một trong những kịch mục phục vụ khán giả. Được dàn dựng công phu, câu chuyện hấp dẫn được phóng tác từ&nbsp;bộ phim hoạt hình đoạt giải Oscar và dàn dựng bởi đạo diễn Nghệ Sĩ Quốc Thảo</p><p><strong>Câu chuyện kể về:&nbsp;</strong>Gia đình Phép Thuật được thần ban cho ngọn nến ma thuật và nó&nbsp;<br>giúp con cháu dòng họ có năng lực hơn người. Riêng Vô Dụng – con gái út của Hai Gắn<br>Kết – không có may mắn đó. Tuy nhiên, cô luôn suy nghĩ tích cực, vui tươi dù bị nhiều<br>người xung quanh đánh giá thấp. Một ngày, sự cố xảy đến khiến gia đình Phép Thuật điêu<br>đứng. Vô đụng lần theo dấu vết đi tìm cậu Út Đen Đủi – người có khả năng nhìn trước</p>",
   "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706669875/fkhd7ghxvwbzip1d9cfl.jpg",
-  "status": "pending",
+  "status": "published",
   "slug": "kich-tet-san-khau-kich-quoc-thao-nhac-kich:-\"vung-dat-dieu-ky\"",
   "createdAt": {
     "$date": "2024-01-31T02:58:02.508Z"
   },
   "updatedAt": {
-    "$date": "2024-01-31T06:57:33.046Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
 },
 {
   "_id": {
@@ -227,14 +234,165 @@
   "address": "Đường 3/4, Đồi Cà Ri Dê, Phường 3, Thành Phố Đà Lạt, Tỉnh Lâm Đồng",
   "introduce": "<p><strong>Liveshow Myra Trần &amp; Hoàng Hải</strong></p><p>Lululola Show - Hơn cả âm nhạc, không gian lãng mạn đậm chất thơ Đà Lạt bao trọn hình ảnh thung lũng Đà Lạt, được ngắm nhìn khoảng khắc hoàng hôn thơ mộng đến khi Đà Lạt về đêm siêu lãng mạn, được giao lưu với thần tượng một cách chân thật và gần gũi nhất trong không gian ấm áp và không khí se lạnh của Đà Lạt. Tất cả sẽ&nbsp; mang đến một đêm nhạc ấn tượng mà bạn không thể quên khi đến với Đà Lạt.</p><p><i><strong>Qúy Khách sẽ được Lululola gửi thông tin số ghế và xác nhận đặt chỗ thành công!</strong></i></p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/848;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706669987/pr1f57vc8l3mgqw3zzzz.jpg\" width=\"1200\" height=\"848\"></figure><figure class=\"image\"><img style=\"aspect-ratio:1200/900;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706670002/e9wn2k8yguoy9zyblbzr.jpg\" width=\"1200\" height=\"900\"></figure>",
   "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1706670006/hamyuhzt5vcqlq3pdj4u.jpg",
-  "status": "pending",
+  "status": "published",
   "slug": "show-tet-lululola-show-myra-tran-*-hoang-hai-or-mung-4-tet",
   "createdAt": {
     "$date": "2024-01-31T03:00:13.807Z"
   },
   "updatedAt": {
-    "$date": "2024-01-31T06:57:33.046Z"
+    "$date": "2024-03-16T09:12:38.585Z"
   },
   "__v": 0,
-  "ticket_types": []
+  "ticket_types": [],
+  "license": "/uploads/giayphep.pdf"
+},
+{
+  "_id": {
+    "$oid": "65f513af799286b76df8cfe7"
+  },
+  "event_name": "Sân Khấu Hồng Vân: Cô 5 - Cậu 10",
+  "category": {
+    "$oid": "65ae3d1bf8cd36a3d0dc78c3"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-04-24T00:00:00.000Z"
+  },
+  "time": "19:30 - 22:00",
+  "location": "Sân Khấu Kịch Hồng Vân",
+  "address": "Địa chỉ: 643 Điện Biên Phủ, P3 (Nhà văn hoá Sinh Viên), Quận 1, Thành Phố Hồ Chí Minh",
+  "introduce": "<p><strong>Sau khi thanh toán thành công quý khách vui lòng liên hệ chọn vị trí ghế theo số hotline:&nbsp;02822446454 - 0828521252</strong></p><p>Tác giả: Tuấn Anh - Minh Nhiều<br>Đạo diễn: Lê Nguyễn Tuấn Anh<br>CVNT: NSND Hồng Vân<br>Thiết kế và thực hiện trang trí: Cty VTTM<br>Gdsx: Lê Tuấn Anh<br><br><strong>Bùi Công Danh, Tuấn Anh, Tuấn Dũng, Lê Lộc, Hoàng Hải, Cao Phương Thúy, Thái Sơn, Châu Nhật Tín, Sao Mai, Ngọc Tâm, Duy Chương, Thắng Minh, Nu Phạm</strong></p><p>Vào những năm thời kỳ Pháp thuộc, vẫn còn những gia đình thành kiến trọng nam khinh nữ. Cậu 5, là một cậu con trai quý tử của nhà ông Hai Thành, một bá Hộ giàu nhất tỉnh Vĩnh Long. Sau 8 năm đi học bên Tây về, cậu ta bàng hoàng khi biết được em gái mình đã chết và má mình bà Út Mươi cũng vì vậy mà phát điên. Cậu ta quyết định tìm ra sự thật đằng sau cái chết của em gái mình. Cùng với những người làm trong nhà như ông Hào quản gia, cậu Út, An Nhàn và thằng Quạ - cậu Năm gặp phải những điều kì lạ và tâm linh trong nhà, như báo hiệu một câu chuyện không lành sắp hé lộ. Cậu Năm quyết định dùng mọi cách để lôi tên hung thủ ra ánh sáng.</p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:592/717;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710560159/nyi3yil6ceqgnhjkddxg.jpg\" width=\"592\" height=\"717\"></figure>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710560175/ngkqdgdj0mxpnygv7msw.jpg",
+  "status": "published",
+  "slug": "san-khau-hong-van:-co-5-cau-10-33fb6",
+  "createdAt": {
+    "$date": "2024-03-16T03:36:15.186Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-16T09:12:38.585Z"
+  },
+  "__v": 0,
+  "license": "/uploads/giayphep.pdf"
+},
+{
+  "_id": {
+    "$oid": "65f5a62c174f6bb6ae49da57"
+  },
+  "event_name": "WHITE PARTY VIETNAM 2024",
+  "category": {
+    "$oid": "65ae3d2ef8cd36a3d0dc78c7"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-04-19T00:00:00.000Z"
+  },
+  "time": "4:00PM - 12:00 PM",
+  "location": "Phu Tho Indoor Stadium",
+  "address": "4 Le Dai Hanh, District 11, Ho Chi Minh City",
+  "introduce": "<figure class=\"image\"><img style=\"aspect-ratio:1200/1200;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710597642/kryvqpp1blqxy5rc0til.jpg\" width=\"1200\" height=\"1200\"></figure><p>&nbsp;</p><p>White Party Việt Nam 2024 là chương trình âm nhạc DJ số 1&nbsp;quốc tế được cấp phép bản quyền bởi White Party Bangkok. White Party Bangkok đã tổ chức và thành công trong hơn 8 năm vừa qua với hàng nghìn khán giả trên khắp thế giới.</p><p>Với quy mô âm thanh ánh sáng&nbsp;cao cấp đạt chất lượng&nbsp;chuẩn&nbsp;quốc tế cùng với các thiết kế visual đặc sắc sẽ mang đến không gian âm nhạc đẳng cấp đốt cháy thị giác, khuấy động thính giác - đây sẽ là một lễ hội âm nhạc hot nhất mùa hè 2024 tại thành phố Hồ Chí Minh, Việt Nam.</p><p>Chương trình sẽ được tổ chức vào 2 đêm 20/7 và 21/7 năm 2024 tại bên trong nhà thi đấu Phú Thọ, Quận 11, thành phố&nbsp;Hồ Chí Minh.</p><p><i><strong>Điều khoản và Điều kiện:</strong></i></p><ul><li>Vé chương trình&nbsp;không được đổi hoặc trả dưới mọi hình thức.</li><li>Dưới 18 tuổi không thể tham gia chương trình dù có sự giám hộ của người đủ điều kiện tham dự.</li><li>Người tham dự sẽ được yêu cầu cung cấp căn cước công dân/ chứng minh nhân dân/ hộ chiếu hoặc các giấy tờ khác có thể chứng minh đô tuổi.</li><li>Việc mua vé thể hiện rằng người mua đã đồng ý với tất cả điều kiện và quy định của Ban tổ chức.</li></ul><p><strong>**CHÚ Ý**:</strong> Giữ kỹ QR Code trên vé điện tử của bạn. Không chia sẻ mã này với bất kỳ ai hoặc trên mạng xã hội. Mã này chứa thông tin cá nhân và chi tiết về vé sự kiện của bạn.</p><p>--------------------------------------------------------------------------</p><p>White Party Vietnam 2024, the premier international DJ music event, officially licensed by White Party Bangkok, promises to ignite the senses and inspire like never before. For over 8 triumphant years, White Party Bangkok has captivated audiences worldwide.</p><p>Prepare to be immersed in a world of top-notch sound and lighting, meeting the highest international standards, complemented by visually stunning designs that will elevate the music experience to new heights, setting ablaze the visual senses and stirring the auditory soul. This will undoubtedly be the hottest music festival of the summer in 2024, taking place in the vibrant city of Ho Chi Minh, Vietnam.</p><p>Mark your calendars for the nights of July 20 and July 21, 2024, as this electrifying event unfolds within the walls of Phu Tho Indoor Stadium, District 11, Ho Chi Minh City.</p><p>&nbsp;</p><p><i><strong>Terms and Conditions:</strong></i></p><ul><li>Tickets are non-refundable and non-exchangeable. No refund will be made under any circumstances.</li><li>Attendees under the age of 18 are not allowed to participate in the event, even with the supervision of an eligible adult.</li><li>Attendees will be required to present&nbsp;their ID card/passport or other documents that can verify their age.</li><li>By purchasing a ticket, the buyer agrees to all the terms and conditions set by the organizer.</li></ul><p><strong>**IMPORTANT**&nbsp;</strong>: Safeguard your E-Ticket QR Code. Avoid sharing it with anyone or on social media. This code holds your personal information and unique ticket details.</p>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710597676/xmnpgywl4fset6crzim6.jpg",
+  "license": "uploads/8c3ba7d3-56f.pdf",
+  "status": "pending",
+  "slug": "white-party-vietnam-2024-ce28f",
+  "createdAt": {
+    "$date": "2024-03-16T14:01:16.318Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-16T14:01:16.318Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f5a7a24e6b0ee16b0ba347"
+  },
+  "event_name": "VIETNAM COCKTAIL FESTIVAL 2024",
+  "category": {
+    "$oid": "65ae3d2ef8cd36a3d0dc78c7"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-03-28T00:00:00.000Z"
+  },
+  "time": "15:00 - 22:00",
+  "location": "Sheraton Saigon Hotel & Towers",
+  "address": "Sheraton Saigon Hotel & Towers  88 Đ. Đồng Khởi, Bến Nghé, Quận 1, Thành Phố Hồ Chí Minh",
+  "introduce": "<p><strong>Lễ hội Cocktail lớn nhất Việt Nam đã trở lại&nbsp;vào mùa hè năm&nbsp;nay.</strong></p><p>&nbsp;</p><p>Lễ hội Gin Festival&nbsp;lớn nhất Sài Gòn lần thứ 6 sẽ trở lại vào tháng 6 này với tên gọi mới là VIETNAM COCKTAIL FESTIVAL, nhằm giới thiệu đa dạng các loại rượu mạnh bao gồm Whisky, Gin, Tequila, Vodka,...</p><p>&nbsp;</p><p>Lễ hội hứa hẹn một cuối tuần thú vị đầy ắp những hoạt động như thưởng thức các loại rượu mạnh và cocktail không giới hạn, tham gia các lớp Master Class để trau dồi thêm thông tin bổ ích, nhạc sống, cửa hàng bán lẻ, trải nghiệm phòng VIP Tasting -&nbsp;nơi trưng bày đa dạng các thương hiệu danh giá.&nbsp;</p><p>&nbsp;</p><p>Hãy tham gia cùng chúng tôi tại Sheraton Saigon Hotel &amp; Towers, một địa điểm sang trọng bật nhất để bắt đầu hành trình khám phá, học hỏi và tận hưởng các loại rượu mạnh hảo hạng đang có mặt tại Việt Nam.&nbsp;</p><p>&nbsp;</p><p><strong>Vé bao gồm:&nbsp;</strong></p><ul><li>Thỏa sức thưởng thức các loại rượu mạnh và cocktail không giới hạn từ 3PM đến 10PM.</li><li>Cơ hội tham dự 06 lớp Master Class trên 1 ngày.&nbsp;</li><li>Hòa mình vào không gian triển lãm với sự góp mặt hơn 50 thương hiệu.&nbsp;</li><li>Các hoạt động giải trí: Show ảo thuật, DJ &amp; Vũ điệu&nbsp;Carnival sôi động</li><li>Có cơ hội&nbsp;khám phá Phòng Thử Rượu Thượng Hạng&nbsp;chỉ với 1.000.000 VNĐ mỗi lần vào để nếm thử 4 shot rượu đặc biệt&nbsp;trong sự kiện.</li></ul><p>&nbsp;</p><p><strong>*Quà tặng đi kèm:</strong>&nbsp;</p><ul><li>01 Bình đựng rượu inox&nbsp;khắc logo&nbsp;sự kiện (trị giá 200.000 VNĐ)</li><li>01 món ăn nhẹ đẳng cấp 5 sao từ Sheraton Saigon Hotel &amp; Towers&nbsp;</li></ul><p>&nbsp;</p><p><strong>Mua vé trước để </strong><i><strong>tiết kiệm lên đến 15%</strong>. Xem chi tiết vé để biết thêm thông tin.</i></p><p>&nbsp;</p><p><strong>Thông tin sự kiện:</strong>&nbsp;</p><ul><li>Ngày diễn ra sự kiện: Thứ Sáu&nbsp;&amp; Thứ Bảy, ngày 14&nbsp;&amp; 15&nbsp;Tháng 6 năm 2024</li><li>Địa điểm: Sheraton Saigon Hotel &amp; Towers</li><li>Thời gian: Từ 3 giờ chiều đến 10 giờ tối</li></ul><p>&nbsp;</p><p><i>*Người tham gia phải đủ 18 tuổi trở lên, không phù hợp cho phụ nữ đang mang thai và cho con bú.</i></p><p><i>*Giá vé đã bao gồm VAT, vui lòng yêu cầu xuất hóa đơn VAT ngay sau khi mua vé.</i></p><p><i>*Không hoàn trả vé.</i></p><p><i>*Việc mua vé thể hiện rằng người mua đã đồng ý với tất cả điều kiện và quy định của Ban tổ chức.</i></p><p><i>*Giữ kỹ QR Code trên vé điện tử của bạn. Không chia sẻ mã này với bất kỳ ai hoặc trên mạng xã hội. Mã này chứa thông tin cá nhân và chi tiết về vé sự kiện của bạn.</i></p><p>&nbsp;</p><p><i><strong>THƯỞNG THỨC CÓ TRÁCH NHIỆM</strong></i></p><p>&nbsp;</p><p>----//</p><p>&nbsp;</p><p><strong>THE VIETNAM COCKTAIL FESTIVAL RETURNS THIS SUMMER WITH A VIBRANT CARNIVAL THEME.</strong></p><p>&nbsp;</p><p>The 6th Biggest Gin Festival&nbsp;will be back in Saigon this June with a new name, VIETNAM COCKTAIL FESTIVAL, showcasing a diverse selection of Spirits including Whisky, Gin, Tequila, Vodka,...</p><p>&nbsp;</p><p>The festival promises a delightful weekend filled with tastings of both free-flowing spirits and cocktails, along with informative masterclasses, live music, retail boutique, VIP tasting room, and immersive experiences with esteemed brands.</p><p>&nbsp;</p><p>Join us at the Sheraton Saigon Hotel &amp; Towers, a captivating venue, to embark on a journey of exploration, learning, and indulgence as you savor the finest spirits Vietnam has to offer.</p><p>&nbsp;</p><p><strong>Ticket Includes:</strong></p><ul><li>Free-Flowing Fine Spirits and Cocktails from 3PM – 10PM</li><li>06 Master Classes per Day</li><li>Exhibition more than 50 Spirits Brands</li><li>Entertainments- Magic Show, DJ &amp; Carnival Dancing</li><li>Get a chance to explore the Exclusive room with only 1,000,000 VND per entrance to taste 4 shots of Exclusive Spirits in event.</li></ul><p>&nbsp;</p><p><strong>*Special Door Gift:</strong>&nbsp;</p><ul><li>01 Stainless Steel Hip Flask (Value of 200.000 VND)</li><li>01&nbsp;5-star food item&nbsp;from Sheraton&nbsp;Saigon Hotel &amp; Towers</li></ul><p>&nbsp;</p><p><strong>Save up to 15% by purchasing tickets in advance</strong><i><strong>.</strong> See ticket details for more information.</i></p><p>&nbsp;</p><p><strong>Event Information:</strong></p><ul><li>Dates: Friday&nbsp;14th &amp; Saturday 15th June 2024</li><li>Location: Sheraton Saigon Hotel &amp; Towers</li><li>Times: 3PM – 10PM</li></ul><p>&nbsp;</p><p><i>*Participants must be at least 18 years old to enter the event, unsuitable for breast feeding and pregnant women.</i></p><p><i>*Ticket price included VAT, please request to issue VAT invoice right after buying ticket.</i></p><p><i>*Not refund.</i></p><p><i>*By purchasing a ticket, the buyer agrees to all the terms and conditions set by the organizer</i>.</p><p><i>*Avoid sharing it with anyone or on social media. This code holds your personal information and unique ticket details.</i></p><p>&nbsp;</p><p><i><strong>ENJOY RESPONSIBLY</strong></i></p>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710598050/tki8bmnynkykfrxf8o7z.jpg",
+  "license": "uploads/giayphep.pdf",
+  "status": "published",
+  "slug": "vietnam-cocktail-festival-2024-4affc",
+  "createdAt": {
+    "$date": "2024-03-16T14:07:30.382Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-16T14:57:32.871Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f5b0d83a80a371ed673bc5"
+  },
+  "event_name": "Vietnam Int'l Cafe Show 2024",
+  "category": {
+    "$oid": "65ae3d2ef8cd36a3d0dc78c7"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-04-27T00:00:00.000Z"
+  },
+  "time": "9:00 - 17:00",
+  "location": "SECC",
+  "address": "799 Đ. Nguyễn Văn Linh, Tân Phú, Quận 7, Thành phố Hồ Chí Minh, Quận 7, Thành Phố Hồ Chí Minh",
+  "introduce": "<p>Cafe Show Vietnam là triển lãm thường niên tại Việt Nam giới thiệu những xu hướng, sản phẩm và cải tiến mới nhất trong ngành F&amp;B.</p><p>Cafe Show Vietnam đóng một vai trò quan trọng trong việc thúc đẩy ngành cà phê Việt Nam nói riêng và ngành F&amp;B nói chung&nbsp;ra toàn cầu bằng cách thúc đẩy trao đổi và hợp tác đa văn hóa.​</p><p>Cafe Show Vietnam là sự kiện không thể bỏ qua cho bất kỳ ai muốn trải nghiệm văn hóa cà phê cũng như văn hóa F&amp;B&nbsp;sôi động của Việt Nam và mở rộng kiến ​​thức.</p><p><strong>Thông tin chung:</strong></p><p><strong>Tiêu đề:&nbsp;</strong>Triển lãm Quốc tế Cafe Show Việt Nam lần thứ 9 (Cafe Show Việt Nam 2024)</p><p><strong>Thời gian:&nbsp;</strong>Ngày 9 tháng 5 (Thứ Năm) ~ 11 tháng 5 (Thứ Bảy), năm 2024</p><p><strong>Giờ mở cửa:&nbsp;</strong>9:00 ~ 17:00&nbsp;</p><p><strong>Địa điểm:&nbsp;</strong>Sảnh A - SECC, Thành phố Hồ Chí Minh, Việt Nam</p><p><strong>Quy mô:&nbsp;</strong>450 nhà triển lãm từ 15 quốc gia&nbsp;</p><p>30.000 khách tham quan đến từ 45 quốc gia</p><p><strong>Sản phẩm trưng bày:&nbsp;</strong>Cà phê, Trà và Bánh ngọt, Món tráng miệng, Sôcôla, Dịch vụ ăn uống, Nhượng quyền thương mại &amp; Khởi nghiệp, Nội thất, Kem, Nguyên liệu, Thiết bị nhà bếp, Máy móc &amp; thiết bị, Giải pháp thanh toán di động, Đóng gói, Nguyên vật liệu thô, Hệ thống bán lẻ, Dịch vụ vệ sinh, Halal</p><p><strong>Sự kiện song hành:</strong></p><p>Coffee Talk</p><p>Sweet Class</p><p>Training Station</p><p>Mocha Port</p><p>Cherry's Choice</p><p>Virtual Tour</p><p>Coffee Alley</p><p>Enjoy Cafe</p><p><strong>Sự kiện nổi bật:</strong></p><p>Vietnam National Barista Championship</p><p>​Vietnam National Brewers Cup</p><p>Asia Latte Art Battle</p><p><strong>Triển lãm đồng tổ chức: </strong>Vietnam Int'l Bar &amp; Spirit Show 2024 | Vietnam Int'l Tea Show 2024</p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:960/650;\" src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710600487/s5rukib3cjrg5u6gs1cz.png\" width=\"960\" height=\"650\"></figure><figure class=\"image\"><img></figure>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710600408/ruciingqdua4a14o4ykr.jpg",
+  "license": "uploads/giayphep.pdf",
+  "status": "published",
+  "slug": "vietnam-int'l-cafe-show-2024-811d9",
+  "createdAt": {
+    "$date": "2024-03-16T14:46:48.540Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-16T14:51:05.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f5b2a3a65e52653d9663b8"
+  },
+  "event_name": "SÂN KHẤU THIÊN ĐĂNG : NGŨ QUÝ TƯƠNG PHÙNG",
+  "category": {
+    "$oid": "65ae3d24f8cd36a3d0dc78c5"
+  },
+  "author": {
+    "$oid": "65954af7cd32fb0977100004"
+  },
+  "occur_date": {
+    "$date": "2024-05-07T00:00:00.000Z"
+  },
+  "time": "06:00 PM - 08:00 PM",
+  "location": "TẦNG 12B - TÒA NHÀ IMC",
+  "address": "62 TRẦN QUANG KHẢI P. TÂN ĐỊNH, District 1, Ho Chi Minh City",
+  "introduce": "<p><i><strong>Sân khấu Nghệ Thuật Thiên Đăng&nbsp;</strong></i>&nbsp;trân trọng giới thiệu đến quý khán giả vở hài kịch \"NGŨ QUÝ TƯƠNG PHÙNG\"&nbsp;</p><p>Tác giả : TUẤN KHÔI - HƯƠNG GIANG</p><p>Đạo diễn : TUẤN KHÔI</p><p>Với sự tham gia của các nghệ sỹ: LÊ KHÁNH,&nbsp;NSƯT THÀNH LỘC,&nbsp;NSƯT HỮU CHÂU, LƯƠNG THẾ THÀNH, HUY TỨ, TRƯƠNG HẠ, TUẤN KHẢI, HƯƠNG GIANG, TRANG TUYỀN, MẠNH HÙNG, CÔNG DŨNG</p><p>Trân trọng kính mời quý khán giả.</p><p>&nbsp;</p><figure class=\"image\"><img src=\"http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710600866/nbh2lnqfflzy4attgiei.webp\"></figure>",
+  "banner": "http://res.cloudinary.com/dx9ybqdfi/image/upload/v1710600868/wityp4cdf32xbysrosag.jpg",
+  "license": "uploads/2f8c04b5-570.pdf",
+  "status": "published",
+  "slug": "san-khau-thien-dang-:-ngu-quy-tuong-phung-5c8d8",
+  "createdAt": {
+    "$date": "2024-03-16T14:54:27.722Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-16T14:57:14.154Z"
+  },
+  "__v": 0
 }]
