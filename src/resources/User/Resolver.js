@@ -121,3 +121,21 @@ module.exports.ANY_AuthenticateToken = (req, res, next) => {
         next();
     });
 };
+
+// [GET] -> api/user/search
+module.exports.GET_UserList = async (req, res, next) => {
+    return await User.find({})
+        .then(users => {
+            return res.status(200).json({
+                success: true,
+                users,
+                msg: `Đã tìm thấy ${users.length} người dùng tương ứng`
+            })
+        })
+        .catch(err => {
+            return res.status(500).json({
+                success: false,
+                msg: "Tìm kiếm người dùng thất bại: " + err
+            })
+        })
+}

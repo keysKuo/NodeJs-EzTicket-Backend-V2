@@ -1,4 +1,4 @@
-const { POST_CreateUser, POST_Login, POST_ConfirmOTP, ANY_AuthenticateToken } = require('./Resolver');
+const { POST_CreateUser, POST_Login, POST_ConfirmOTP, ANY_AuthenticateToken, GET_UserList } = require('./Resolver');
 const { Validate_Register } = require('./Validator');
 const router = require('express').Router();
 
@@ -15,5 +15,7 @@ router.post('/confirm_otp', POST_ConfirmOTP);
 router.get('/test_authentication', ANY_AuthenticateToken, (req, res, next) => {
     return res.json('Authenticated');
 })
+
+router.get('/search', GET_UserList);
 
 module.exports = router;
