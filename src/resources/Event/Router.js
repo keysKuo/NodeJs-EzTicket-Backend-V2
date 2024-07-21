@@ -9,6 +9,7 @@ const {
     GET_EventView,
     PUT_UpdateTicketTypesOfEvent,
     GET_SearchEventsByCategory,
+    GET_SearchEventsByText,
 } = require('./Resolver');
 const { upload } = require('../../middlewares/multer');
 const { Validate_CreateEvent } = require('./Validator');
@@ -17,7 +18,7 @@ const { ANY_AuthenticateToken } = require('../User/Resolver');
 router.post(
     '/create',
     upload.fields([
-        { name: 'banner', maxCount: 1 }, 
+        { name: 'banner', maxCount: 1 },
         { name: 'license', maxCount: 1 },
     ]),
     Validate_CreateEvent,
@@ -33,6 +34,8 @@ router.get('/detail/:event_id', GET_EventDetail);
 router.get('/view/:event_slug', GET_EventView);
 
 router.get('/search', GET_SearchEvents);
+
+router.get('/search-text', GET_SearchEventsByText);
 
 router.get('/search_by_category', GET_SearchEventsByCategory);
 

@@ -56,7 +56,7 @@ module.exports.PUT_UpdateTicketTypesOfEvent = async (req, res, next) => {
     const { ticket_types } = req.body;
 
     let types = JSON.parse(ticket_types);
-    
+
     if (types.length !== 0) {
         for (let i = 0; i < types.length; i++) {
             if (types[i].is_delete) {
@@ -74,9 +74,7 @@ module.exports.PUT_UpdateTicketTypesOfEvent = async (req, res, next) => {
                     });
             } else {
                 await TicketType.findByIdAndUpdate(types[i]._id, types[i])
-                    .then((type) => {
-                        
-                    })
+                    .then((type) => {})
                     .catch((err) => {
                         return res.status(500).json({
                             success: false,
@@ -217,7 +215,7 @@ module.exports.GET_EventView = async (req, res, next) => {
         .populate({ path: 'category' })
         .lean()
         .then(async (event) => {
-            let ticket_types = await TicketType.find({ event }).sort({ price: 1 })
+            let ticket_types = await TicketType.find({ event }).sort({ price: 1 });
             return res.status(200).json({
                 success: true,
                 event: { ...event, occur_date: event.occur_date.toLocaleDateString('en-CA'), ticket_types },
@@ -254,47 +252,85 @@ module.exports.GET_SearchEvents = async (req, res, next) => {
         });
 };
 
+// [GET] -> api/event/search-text/?search=?
+module.exports.GET_SearchEventsByText = async (req, res, next) => {
+    const { search } = req.params;
+    const regex = new RegExp(search, 'i');
+    return await Event.find({
+        $or: [{ event_name: regex }],
+    })
+        .select({ introduce: 0 })
+        .sort({ createdAt: -1 })
+        .populate({ path: 'category' })
+        .lean()
+        .then((events) => {
+            return res.status(200).json({
+                success: true,
+                events,
+                msg: `Đã tìm thấy ${events.length} sự kiện tương ứng`,
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Lỗi hệ thống trong quá trình tìm kiếm: ' + err,
+            });
+        });
+};
+
 // [GET] -> api/event/search_by_category?slug=...
 module.exports.GET_SearchEventsByCategory = async (req, res, next) => {
-    const { slug, page } = req.query;
-    
-    const category = await Category.findOne({slug});
+    const { slug, page, search } = req.query;
 
-    if(!category) {
+    const category = await Category.findOne({ slug });
+
+    if (!category) {
         return res.status(404).json({
             success: false,
-            msg: 'Không tìm thấy danh mục này'
-        })
+            msg: 'Không tìm thấy danh mục này',
+        });
     }
-    
-    const limit = 20;
+
+    let query = { category };
+    let regex = '';
+
+    if (search && search !== '') {
+        regex = new RegExp(search, 'i');
+        query = { ...query, $and: [{ event_name: regex }] };
+    }
+
+    const total = (await Event.find(query)).length;
+
+    const limit = 10;
+
     const skip = page ? limit * (parseInt(page) - 1) : 0;
-    return await Event.find({ category })
+    return await Event.find(query)
         .populate('category')
         .select({ introduce: 0 })
         .skip(skip)
         .limit(limit)
         .lean()
-        .then(async events => {
+        .then(async (events) => {
             let return_events = [];
-            for(let i in events) {
-                let ticket_types = await TicketType.find({event: events[i]}).sort({ price: 1 }).lean();
-                return_events.push({...events[i], ticket_types});
+            for (let i in events) {
+                let ticket_types = await TicketType.find({ event: events[i] }).sort({ price: 1 }).lean();
+                return_events.push({ ...events[i], ticket_types });
             }
 
             return res.status(200).json({
                 success: true,
+                total: total,
                 events: return_events,
-                msg: `Tìm thấy ${events.length} sự kiện tương ứng`
-            })
+                msg: `Tìm thấy ${events.length} sự kiện tương ứng`,
+            });
         })
-        .catch(err => {
+        .catch((err) => {
             return res.status(500).json({
                 success: false,
-                msg: 'Tìm kiếm sự kiện thất bại: ' + err
-            })
-        })
-}
+                msg: 'Tìm kiếm sự kiện thất bại: ' + err,
+            });
+        });
+};
 
 // [POST] -> /api/event/uploadCK
 module.exports.POST_UploadCK = async (req, res, next) => {
