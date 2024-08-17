@@ -236,6 +236,7 @@ module.exports.GET_SearchEvents = async (req, res, next) => {
         .select({ introduce: 0 })
         .sort({ createdAt: -1 })
         .populate({ path: 'category' })
+        .limit(req.query.limit || 12)
         .lean()
         .then((events) => {
             return res.status(200).json({
@@ -328,6 +329,28 @@ module.exports.GET_SearchEventsByCategory = async (req, res, next) => {
             return res.status(500).json({
                 success: false,
                 msg: 'Tìm kiếm sự kiện thất bại: ' + err,
+            });
+        });
+};
+
+// // [GET] -> api/event/author?
+module.exports.GET_SearchEventsByAuthor = async (req, res, next) => {
+    return await Event.find({ ...req.query })
+        .select({ introduce: 0 })
+        .sort({ createdAt: -1 })
+        .populate({ path: 'category' })
+        .lean()
+        .then((events) => {
+            return res.status(200).json({
+                success: true,
+                events,
+                msg: `Đã tìm thấy ${events.length} sự kiện tương ứng`,
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Lỗi hệ thống trong quá trình tìm kiếm: ' + err,
             });
         });
 };
