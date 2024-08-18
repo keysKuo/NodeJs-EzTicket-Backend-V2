@@ -232,9 +232,15 @@ module.exports.GET_EventView = async (req, res, next) => {
 
 // [GET] -> api/event/search?...
 module.exports.GET_SearchEvents = async (req, res, next) => {
-    const { page, limit } = req.query;
+    const { page, limit, search } = req.query;
     const skip = page ? limit * (parseInt(page) - 1) : 0;
-    const query = { ...req.query, limit: null, sort: null, page: null };
+    let regex = '';
+
+    let query = { ...req.query, limit: null, sort: null, page: null, search: null };
+    if (search && search !== '') {
+        regex = new RegExp(search, 'i');
+        query = { ...query, $and: [{ event_name: regex }] };
+    }
     const total = (await Event.find(query)).length;
     return await Event.find(query)
         .select({ introduce: 0 })
@@ -244,10 +250,15 @@ module.exports.GET_SearchEvents = async (req, res, next) => {
         .skip(skip)
         .sort(req.query.sort)
         .lean()
-        .then((events) => {
+        .then(async (events) => {
+            let return_events = [];
+            for (let i in events) {
+                let ticket_types = await TicketType.find({ event: events[i] }).sort({ price: 1 }).lean();
+                return_events.push({ ...events[i], ticket_types });
+            }
             return res.status(200).json({
                 success: true,
-                events,
+                events: return_events,
                 total: total,
                 msg: `Đã tìm thấy ${events.length} sự kiện tương ứng`,
             });
@@ -288,7 +299,7 @@ module.exports.GET_SearchEventsByText = async (req, res, next) => {
 
 // [GET] -> api/event/search_by_category?slug=...
 module.exports.GET_SearchEventsByCategory = async (req, res, next) => {
-    const { slug, page, search } = req.query;
+    const { slug, page, search, status } = req.query;
     var cutoff = new Date();
     const category = await Category.findOne({ slug });
 
@@ -299,7 +310,7 @@ module.exports.GET_SearchEventsByCategory = async (req, res, next) => {
         });
     }
 
-    let query = { category, occur_date: { $gte: cutoff } };
+    let query = { category, occur_date: { $gte: cutoff }, status };
     let regex = '';
 
     if (search && search !== '') {
