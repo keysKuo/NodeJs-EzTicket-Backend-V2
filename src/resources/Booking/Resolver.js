@@ -1,6 +1,7 @@
 const Booking = require('./Model');
 const Ticket = require('../Ticket/Model');
 const TicketType = require('../TicketType/Model');
+const { query } = require('express');
 
 // [POST] -> api/booking/create
 module.exports.POST_CreateBooking = async (req, res, next) => {
@@ -161,20 +162,68 @@ module.exports.GET_BookingDetail = async (req, res, next) => {
 
 // [GET] -> api/booking/search?
 module.exports.GET_SearchBookings = async (req, res, next) => {
-    return await Booking.find({ ...req.query })
-        .populate({ path: 'tickets.ticket_type', populate: { path: 'event', select: '_id banner event_name' } })
+    const { page, limit } = req.query;
+    const skip = page ? limit * (parseInt(page) - 1) : 0;
+    const total = (
+        await Booking.find({ ...req.query, tag: null, page: null, limit: null }).populate({
+            path: 'tickets.ticket_type',
+            populate: {
+                path: 'event',
+                select: '_id banner event_name occur_date',
+            },
+        })
+    ).length;
+    return await Booking.find({ ...req.query, tag: null, page: null, limit: null })
+        .populate({
+            path: 'tickets.ticket_type',
+            populate: {
+                path: 'event',
+                select: '_id banner event_name occur_date',
+            },
+        })
+        .skip(skip)
+        .limit(limit)
         .sort({ createdAt: -1 })
         .lean()
         .then((bookings) => {
-            return res.status(200).json({
-                success: true,
-                bookings: bookings.map((booking) => {
-                    return {
+            const result = [];
+            for (const booking of bookings) {
+                var cutoff = new Date();
+                if (req.query.tag === 'all') {
+                    result.push({
                         ...booking,
                         event: booking.tickets[0].ticket_type.event,
-                    };
-                }),
-                msg: `Đã tìm thấy ${bookings.length} booking vé`,
+                    });
+                } else {
+                    const event = booking.tickets[0].ticket_type.event;
+                    if (req.query.tag === 'upcoming') {
+                        if (event.occur_date > cutoff) {
+                            result.push({
+                                ...booking,
+                                event: booking.tickets[0].ticket_type.event,
+                            });
+                        }
+                    } else if (req.query.tag === 'finished') {
+                        if (event.occur_date < cutoff) {
+                            result.push({
+                                ...booking,
+                                event: booking.tickets[0].ticket_type.event,
+                            });
+                        }
+                    }
+                }
+            }
+            if (result.length > 0)
+                return res.status(200).json({
+                    success: true,
+                    bookings: result,
+                    total: total,
+                    msg: `Đã tìm thấy ${result.length} booking vé`,
+                });
+            return res.status(200).json({
+                success: true,
+                bookings: [],
+                msg: `Đã tìm thấy ${result.length} booking vé`,
             });
         })
         .catch((err) => {
