@@ -232,17 +232,23 @@ module.exports.GET_EventView = async (req, res, next) => {
 
 // [GET] -> api/event/search?...
 module.exports.GET_SearchEvents = async (req, res, next) => {
-    return await Event.find({ ...req.query, limit: null, sort: null })
+    const { page, limit } = req.query;
+    const skip = page ? limit * (parseInt(page) - 1) : 0;
+    const query = { ...req.query, limit: null, sort: null, page: null };
+    const total = (await Event.find(query)).length;
+    return await Event.find(query)
         .select({ introduce: 0 })
         .sort({ createdAt: -1 })
         .populate({ path: 'category' })
-        .limit(req.query.limit)
+        .limit(limit)
+        .skip(skip)
         .sort(req.query.sort)
         .lean()
         .then((events) => {
             return res.status(200).json({
                 success: true,
                 events,
+                total: total,
                 msg: `Đã tìm thấy ${events.length} sự kiện tương ứng`,
             });
         })
