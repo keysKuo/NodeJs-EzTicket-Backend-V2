@@ -232,11 +232,12 @@ module.exports.GET_EventView = async (req, res, next) => {
 
 // [GET] -> api/event/search?...
 module.exports.GET_SearchEvents = async (req, res, next) => {
-    return await Event.find({ ...req.query })
+    return await Event.find({ ...req.query, limit: null, sort: null })
         .select({ introduce: 0 })
         .sort({ createdAt: -1 })
         .populate({ path: 'category' })
-        .limit(req.query.limit || 12)
+        .limit(req.query.limit)
+        .sort(req.query.sort)
         .lean()
         .then((events) => {
             return res.status(200).json({
@@ -282,7 +283,7 @@ module.exports.GET_SearchEventsByText = async (req, res, next) => {
 // [GET] -> api/event/search_by_category?slug=...
 module.exports.GET_SearchEventsByCategory = async (req, res, next) => {
     const { slug, page, search } = req.query;
-
+    var cutoff = new Date();
     const category = await Category.findOne({ slug });
 
     if (!category) {
@@ -292,7 +293,7 @@ module.exports.GET_SearchEventsByCategory = async (req, res, next) => {
         });
     }
 
-    let query = { category };
+    let query = { category, occur_date: { $gte: cutoff } };
     let regex = '';
 
     if (search && search !== '') {
