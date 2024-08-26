@@ -4,7 +4,7 @@ const Ticket = require('../Ticket/Model');
 
 // [POST] -> api/ticket_type/create
 module.exports.POST_CreateTicketType = async (req, res, next) => {
-    const { price, n_stock, ticket_name } = req.body;
+    const { price, n_stock, ticket_name, is_area } = req.body;
 
     let ticket_type = await TicketType.findOne({ ticket_name });
     if (ticket_type) {
@@ -39,8 +39,25 @@ module.exports.POST_CreateTicketType = async (req, res, next) => {
 // [PUT] -> api/ticket_type/update/:type_id
 module.exports.PUT_UpdateTicketType = async (req, res, next) => {
     const { type_id } = req.params;
-
     return await TicketType.findByIdAndUpdate(type_id, { $set: { ...req.body } }, { returnOriginal: false })
+        .then((ticket) => {
+            return res.status(200).json({
+                success: true,
+                ticket,
+                msg: 'Cập nhật loại vé thành công',
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Cập nhật loại vé thất bại: ' + err,
+            });
+        });
+};
+
+// [PUT] -> api/ticket_type/update/:type_id
+module.exports.PUT_UpdateManyTicketType = async (req, res, next) => {
+    return await TicketType.updateMany(req.body)
         .then((ticket) => {
             return res.status(200).json({
                 success: true,

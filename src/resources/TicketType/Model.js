@@ -8,7 +8,22 @@ const TicketType = new Schema(
         price: { type: Number, required: true },
         n_sold: { type: Number, default: 0 },
         n_stock: { type: Number, default: 0 },
-        is_selling: { type: Boolean, default: false }
+        is_selling: { type: Boolean, default: false },
+        position: {
+            type: {
+                x: { type: Number, default: 0 },
+                y: { type: Number, default: 0 },
+                w: { type: Number, default: 1 },
+                h: { type: Number, default: 1 },
+            },
+            default: {
+                x: 0,
+                y: 0,
+                w: 1,
+                h: 1,
+            },
+        },
+        is_area: { type: Boolean, default: false },
     },
     {
         timestamps: true,
@@ -16,4 +31,3 @@ const TicketType = new Schema(
 );
 
 module.exports = mongoose.model('TicketType', TicketType);
-

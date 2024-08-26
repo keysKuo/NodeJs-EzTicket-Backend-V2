@@ -160,6 +160,27 @@ module.exports.PUT_UpdateEvent = async (req, res, next) => {
         });
 };
 
+// [PUT] -> /api/event/update-type/:event_id
+module.exports.PUT_UpdateEventType = async (req, res, next) => {
+    const { event_id } = req.params;
+    const { is_seat_allocation } = req.query;
+
+    return await Event.findByIdAndUpdate(event_id, { $set: { is_seat_allocation: is_seat_allocation } })
+        .then(async (event) => {
+            return res.status(200).json({
+                success: true,
+                event,
+                msg: 'Cập nhật sự kiện thành công',
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Cập nhật sự kiện thất bại: ' + err,
+            });
+        });
+};
+
 // [DELETE] -> /api/event/delete/:event_id
 module.exports.DELETE_RemoveEvent = async (req, res, next) => {
     const { event_id } = req.params;

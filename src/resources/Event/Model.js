@@ -13,12 +13,13 @@ const Event = new Schema(
         introduce: { type: String },
         banner: { type: String, required: true },
         license: { type: String },
-        status: { type: String, default: "published", enum: ['published', 'pending', 'ended'] }, // pending -> published -> ended 
+        is_seat_allocation: { type: Boolean, default: false },
+        status: { type: String, default: 'published', enum: ['published', 'pending', 'ended'] }, // pending -> published -> ended
         slug: { type: String, required: true },
     },
     {
-        timestamps: true
-    }
-)
+        timestamps: true,
+    },
+);
 
 module.exports = mongoose.model('Event', Event);

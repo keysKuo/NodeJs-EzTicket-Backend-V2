@@ -3,12 +3,20 @@ const Schema = mongoose.Schema;
 
 const Ticket = new Schema(
     {
-        owner: { type: mongoose.Types.ObjectId, ref: 'User', required: true},
+        owner: { type: mongoose.Types.ObjectId, ref: 'User', required: true },
         trade_code: { type: String, required: true },
         ticket_type: { type: mongoose.Types.ObjectId, ref: 'TicketType' },
         ticket_code: { type: String, required: true },
         expiry: { type: Date, required: true },
-        status: { type: String, default: "available", enum: ['available', 'unvailable', 'pending', 'sold', 'used'] }, // available (unavailable) -> pending -> soldout
+        status: { type: String, default: 'available', enum: ['available', 'unvailable', 'pending', 'sold', 'used'] }, // available (unavailable) -> pending -> soldout
+        position: {
+            type: {
+                x: { type: Number, default: 0 },
+                y: { type: Number, default: 0 },
+                w: { type: Number, default: 0 },
+                h: { type: Number, default: 0 },
+            },
+        },
     },
     {
         timestamps: true,
@@ -16,4 +24,3 @@ const Ticket = new Schema(
 );
 
 module.exports = mongoose.model('Ticket', Ticket);
-

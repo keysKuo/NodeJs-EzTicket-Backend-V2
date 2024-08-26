@@ -10,6 +10,7 @@ const {
     PUT_UpdateTicketTypesOfEvent,
     GET_SearchEventsByCategory,
     GET_SearchEventsByText,
+    PUT_UpdateEventType,
 } = require('./Resolver');
 const { upload } = require('../../middlewares/multer');
 const { Validate_CreateEvent } = require('./Validator');
@@ -26,6 +27,8 @@ router.post(
 );
 
 router.put('/update/:event_id', upload.single('banner'), PUT_UpdateTicketTypesOfEvent, PUT_UpdateEvent);
+
+router.put('/update-type/:event_id', PUT_UpdateEventType);
 
 router.delete('/delete/:event_id', DELETE_RemoveEvent);
 
