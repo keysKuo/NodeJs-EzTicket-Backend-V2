@@ -8,7 +8,7 @@ const TicketType_Router = require('./TicketType/Router');
 const Checkout_Router = require('./Checkout/Router');
 const Admin_Router = require('./Admin/Router');
 const Refund_Router = require('./Refund/Router');
-
+const Area_Router = require('./Area/Router');
 
 const router = require('express').Router();
 
@@ -31,5 +31,7 @@ router.use('/checkout', Checkout_Router);
 router.use('/admin', Admin_Router);
 
 router.use('/refund', Refund_Router);
+
+router.use('/area', Area_Router);
 
 module.exports = router;

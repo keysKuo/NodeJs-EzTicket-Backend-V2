@@ -2,14 +2,41 @@ const mongoose = require('mongoose');
 const TicketType = require('./Model');
 const Ticket = require('../Ticket/Model');
 
+function generateMatrix(numItems) {
+    const matrixSize = Math.ceil(Math.sqrt(numItems));
+    const matrix = [];
+    let count = 0;
+
+    // Function to generate the name in the format 'A-1', 'A-2', etc.
+    function generateName(index) {
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const letter = letters[Math.floor(index / matrixSize)];
+        const number = (index % matrixSize) + 1;
+        return `${letter}-${number}`;
+    }
+
+    for (let x = 0; x < matrixSize; x++) {
+        for (let y = 0; y < matrixSize; y++) {
+            if (count < numItems) {
+                const name = generateName(count);
+                matrix.push({ x, y, name, w: 1, h: 1 });
+                count++;
+            }
+        }
+    }
+
+    return matrix;
+}
 // [POST] -> api/ticket_type/create
 module.exports.POST_CreateTicketType = async (req, res, next) => {
     const { price, n_stock, ticket_name, is_area } = req.body;
+    const ticket_map = generateMatrix(n_stock);
 
     let ticket_type = await TicketType.findOne({ ticket_name });
     if (ticket_type) {
         ticket_type.n_stock += n_stock;
         ticket_type.price = price;
+        ticket_type.ticket_map = ticket_map;
         await ticket_type.save();
 
         return res.status(200).json({
@@ -20,7 +47,7 @@ module.exports.POST_CreateTicketType = async (req, res, next) => {
         });
     }
 
-    return await TicketType.create({ ...req.body })
+    return await TicketType.create({ ...req.body, ticket_map })
         .then((ticket_type) => {
             return res.status(200).json({
                 success: true,

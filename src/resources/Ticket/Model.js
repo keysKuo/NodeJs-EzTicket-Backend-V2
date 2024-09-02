@@ -13,8 +13,8 @@ const Ticket = new Schema(
             type: {
                 x: { type: Number, default: 0 },
                 y: { type: Number, default: 0 },
-                w: { type: Number, default: 0 },
-                h: { type: Number, default: 0 },
+                w: { type: Number, default: 1 },
+                h: { type: Number, default: 1 },
             },
         },
     },

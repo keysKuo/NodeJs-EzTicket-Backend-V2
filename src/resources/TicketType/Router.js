@@ -1,7 +1,13 @@
-const { POST_CreateTicketType, PUT_UpdateTicketType, DELETE_RemoveTicketType, GET_TicketTypeDetail, GET_SearchTicketTypes, POST_CheckStorage } = require('./Resolver');
+const {
+    POST_CreateTicketType,
+    PUT_UpdateTicketType,
+    DELETE_RemoveTicketType,
+    GET_TicketTypeDetail,
+    GET_SearchTicketTypes,
+    POST_CheckStorage,
+} = require('./Resolver');
 
 const router = require('express').Router();
-
 
 router.post('/create', POST_CreateTicketType);
 

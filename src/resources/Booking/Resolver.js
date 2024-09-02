@@ -13,6 +13,8 @@ module.exports.POST_CreateBooking = async (req, res, next) => {
                 ticket_type: item._id,
                 price: item.price,
                 qty: item.qty,
+                x: item.x,
+                y: item.y,
             };
         }),
         trade_code: `EZ${Math.floor(Math.random() * 99999999)}`,

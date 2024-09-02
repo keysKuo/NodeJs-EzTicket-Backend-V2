@@ -24,6 +24,15 @@ const TicketType = new Schema(
             },
         },
         is_area: { type: Boolean, default: false },
+        ticket_map: [
+            {
+                name: { type: String },
+                x: { type: Number, default: 0 },
+                y: { type: Number, default: 0 },
+                w: { type: Number, default: 1 },
+                h: { type: Number, default: 1 },
+            },
+        ],
     },
     {
         timestamps: true,
