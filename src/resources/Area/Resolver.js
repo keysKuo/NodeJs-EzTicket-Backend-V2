@@ -45,6 +45,24 @@ module.exports.GET_GetAreaByEventId = async (req, res, next) => {
         });
 };
 
+// [PUT] -> api/area/update/:area_id
+module.exports.PUT_UpdateArea = async (req, res, next) => {
+    const { area_id } = req.params;
+    return await Area.findByIdAndUpdate(area_id, { $set: { ...req.body } }, { returnOriginal: false })
+        .then((area) => {
+            return res.status(200).json({
+                success: true,
+                area,
+                msg: 'Cập nhật khu vực thành công',
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Cập nhật khu vực thất bại: ' + err,
+            });
+        });
+};
 // [DELETE] -> api/area/delete/:area_id
 module.exports.DELETE_RemoveArea = async (req, res, next) => {
     const { area_id } = req.params;

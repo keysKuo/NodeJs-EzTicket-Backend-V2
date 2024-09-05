@@ -19,7 +19,7 @@ function generateMatrix(numItems) {
         for (let y = 0; y < matrixSize; y++) {
             if (count < numItems) {
                 const name = generateName(count);
-                matrix.push({ x, y, name, w: 1, h: 1 });
+                matrix.push({ x, y, i: name, w: 1, h: 1 });
                 count++;
             }
         }

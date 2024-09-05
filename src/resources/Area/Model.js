@@ -19,6 +19,7 @@ const Area = new Schema(
                 h: 1,
             },
         },
+        is_static: { type: Boolean, default: false },
     },
     {
         timestamps: true,

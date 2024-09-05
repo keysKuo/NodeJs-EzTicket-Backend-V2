@@ -26,7 +26,7 @@ router.post(
     POST_CreateEvent,
 );
 
-router.put('/update/:event_id', upload.single('banner'), PUT_UpdateTicketTypesOfEvent, PUT_UpdateEvent);
+router.put('/update/:event_id', upload.single('banner'), PUT_UpdateEvent);
 
 router.put('/update-type/:event_id', PUT_UpdateEventType);
 

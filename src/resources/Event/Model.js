@@ -8,6 +8,8 @@ const Event = new Schema(
         author: { type: Schema.Types.ObjectId, ref: 'User' },
         occur_date: { type: Date, required: true },
         time: { type: String, require: true },
+        start_time: { type: String, require: true },
+        end_time: { type: String, require: true },
         location: { type: String, required: true },
         address: { type: String, required: true },
         introduce: { type: String },
