@@ -6,7 +6,7 @@ const { sendMail, mailForm } = require('../../utils/mail');
 
 // [POST] -> api/ticket/create
 module.exports.POST_CreateTicket = async (req, res, next) => {
-    const { trade_code, ticket_type, ticket_name, qty } = req.body;
+    const { trade_code, ticket_type, ticket_name, qty, x, y } = req.body;
     let payloads = [];
     let oneMonthLater = new Date();
     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
@@ -18,6 +18,8 @@ module.exports.POST_CreateTicket = async (req, res, next) => {
             ticket_code: createCode(8).toUpperCase(),
             expiry: oneMonthLater,
             status: 'available',
+            x: x || 0,
+            y: y || 0,
         });
     }
 
@@ -226,12 +228,16 @@ module.exports.GET_ResendTicket = async (req, res, next) => {
                             </td>
                             </tr>
                         </table>
-                        <div style="font-size: 20px; font-weight: bold; margin-top: 6px;">${ticket.ticket_type?.ticket_name}</div>
+                        <div style="font-size: 20px; font-weight: bold; margin-top: 6px;">${
+                            ticket.ticket_type?.ticket_name
+                        }</div>
                         <div style="font-weight: 600;">${(ticket.ticket_type?.price).toLocaleString('vi-vn')}đ</div>
                         <div>ID: ${trade_code}</div>
                         </td>
                         <td width="584" style="background-color: #eee;">
-                        <img src="${ticket.ticket_type?.event?.banner}" width="100%" style="border-radius: 0 16px 16px 0; display: block;" />
+                        <img src="${
+                            ticket.ticket_type?.event?.banner
+                        }" width="100%" style="border-radius: 0 16px 16px 0; display: block;" />
                         </td>
                     </tr>
                 </table>
@@ -254,6 +260,33 @@ module.exports.GET_ResendTicket = async (req, res, next) => {
             return res.status(500).json({
                 success: false,
                 msg: `Tìm kiếm vé xãy ra lồi: ` + err,
+            });
+        });
+};
+
+// [GET] -> /api/ticket/sold/:ticketTypeId
+module.exports.GET_SoldTicket = async (req, res, next) => {
+    const { ticketTypeId } = req.params;
+    return await Ticket.find({ ticket_type: ticketTypeId })
+        .lean()
+        .then((tickets) => {
+            if (!tickets) {
+                return res.status(404).json({
+                    success: false,
+                    msg: 'Không tìm thấy vé tương ứng',
+                });
+            }
+
+            return res.status(200).json({
+                success: true,
+                tickets,
+                msg: 'Tìm kiếm vé thành công',
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({
+                success: false,
+                msg: 'Tìm kiếm vé thất bại: ' + err,
             });
         });
 };

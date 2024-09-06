@@ -13,8 +13,8 @@ module.exports.POST_CreateBooking = async (req, res, next) => {
                 ticket_type: item._id,
                 price: item.price,
                 qty: item.qty,
-                x: item.x,
-                y: item.y,
+                x: item.x || 0,
+                y: item.y || 0,
             };
         }),
         trade_code: `EZ${Math.floor(Math.random() * 99999999)}`,
@@ -232,6 +232,25 @@ module.exports.GET_SearchBookings = async (req, res, next) => {
             return res.status(500).json({
                 success: false,
                 msg: `Tìm booking vé thất bại: ` + err,
+            });
+        });
+};
+
+// [GET] -> api/booking/ticketType/:ticketTypeId
+module.exports.GET_GetBookingByTicketTypeId = async (req, res, next) => {
+    const { ticketTypeId } = req.params;
+    return await Booking.find({
+        'tickets.ticket_type': ticketTypeId,
+    })
+        // .populate({
+        //     path: 'tickets.ticket_type',
+        //     select: '_id ticket_name price n_sold n_stock position',
+        // })
+        .lean()
+        .then((bookings) => {
+            return res.status(200).json({
+                success: true,
+                bookings: bookings,
             });
         });
 };

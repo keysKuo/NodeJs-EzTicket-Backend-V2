@@ -5,7 +5,7 @@ const Ticket = require('../Ticket/Model');
 const PAYMENTS = require('../../utils/payments');
 const CRYPTO = require('../../utils/crypto');
 require('dotenv').config();
-const DOMAIN_URL = process.env.DOMAIN_URL || 'http://localhost:3000'
+const DOMAIN_URL = process.env.DOMAIN_URL || 'http://localhost:3000';
 const secretKey = process.env.ACCESS_TOKEN_SECRET;
 
 // [POST] -> api/checkout/access_payment
@@ -122,6 +122,8 @@ module.exports.POST_CreateCheckout = async (req, res, next) => {
                                 ticket_code: CRYPTO.createCode(8).toUpperCase(),
                                 expiry: oneMonthLater,
                                 status: 'sold',
+                                x: ticket.x,
+                                y: ticket.y,
                             });
                         }
 
