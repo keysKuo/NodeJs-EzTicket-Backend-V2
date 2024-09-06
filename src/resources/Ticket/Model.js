@@ -8,6 +8,7 @@ const Ticket = new Schema(
         ticket_type: { type: mongoose.Types.ObjectId, ref: 'TicketType' },
         ticket_code: { type: String, required: true },
         expiry: { type: Date, required: true },
+        name: { type: String },
         status: { type: String, default: 'available', enum: ['available', 'unvailable', 'pending', 'sold', 'used'] }, // available (unavailable) -> pending -> soldout
         x: { type: Number, default: 0 },
         y: { type: Number, default: 0 },

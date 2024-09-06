@@ -230,9 +230,10 @@ module.exports.GET_ResendTicket = async (req, res, next) => {
                         </table>
                         <div style="font-size: 20px; font-weight: bold; margin-top: 6px;">${
                             ticket.ticket_type?.ticket_name
-                        }</div>
+                        } ${ticket?.name || ''}</div>
                         <div style="font-weight: 600;">${(ticket.ticket_type?.price).toLocaleString('vi-vn')}đ</div>
-                        <div>ID: ${trade_code}</div>
+                        <div>Ticket code: ${ticket.ticket_code}</div>
+                        <div>Trade ID: ${trade_code}</div>
                         </td>
                         <td width="584" style="background-color: #eee;">
                         <img src="${

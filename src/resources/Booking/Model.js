@@ -10,6 +10,8 @@ const Booking = new Schema(
                 qty: { type: Number, required: true },
                 x: { type: Number },
                 y: { type: Number },
+                ticket_name: { type: String },
+                name: { type: String },
             },
         ],
         trade_code: { type: String, required: true },

@@ -124,6 +124,7 @@ module.exports.POST_CreateCheckout = async (req, res, next) => {
                                 status: 'sold',
                                 x: ticket.x,
                                 y: ticket.y,
+                                name: ticket.name,
                             });
                         }
 

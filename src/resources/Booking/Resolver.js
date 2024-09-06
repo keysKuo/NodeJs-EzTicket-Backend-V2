@@ -15,6 +15,8 @@ module.exports.POST_CreateBooking = async (req, res, next) => {
                 qty: item.qty,
                 x: item.x || 0,
                 y: item.y || 0,
+                ticket_name: item.ticket_name,
+                name: item.name,
             };
         }),
         trade_code: `EZ${Math.floor(Math.random() * 99999999)}`,
@@ -169,6 +171,7 @@ module.exports.GET_SearchBookings = async (req, res, next) => {
     const total = (
         await Booking.find({ ...req.query, tag: null, page: null, limit: null }).populate({
             path: 'tickets.ticket_type',
+            select: '_id event ticket_name price n_sold n_stock is_selling',
             populate: {
                 path: 'event',
                 select: '_id banner event_name occur_date',
