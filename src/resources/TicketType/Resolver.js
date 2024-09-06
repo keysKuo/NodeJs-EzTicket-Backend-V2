@@ -28,23 +28,8 @@ function generateMatrixWithDimensions(width, height, numItems) {
 
 // [POST] -> api/ticket_type/create
 module.exports.POST_CreateTicketType = async (req, res, next) => {
-    const { price, n_stock, ticket_name, position } = req.body;
+    const { n_stock, ticket_name, position } = req.body;
     const ticket_map = generateMatrixWithDimensions(position.w, position.h, n_stock);
-
-    // let ticket_type = await TicketType.findOne({ ticket_name });
-    // if (ticket_type) {
-    //     ticket_type.n_stock += n_stock;
-    //     ticket_type.price = price;
-    //     ticket_type.ticket_map = ticket_map;
-    //     await ticket_type.save();
-
-    //     return res.status(200).json({
-    //         success: true,
-    //         ticket_type,
-    //         is_addQty: true,
-    //         msg: `Đã thêm thành công ${n_stock} vé ${ticket_name}`,
-    //     });
-    // }
 
     return await TicketType.create({ ...req.body, ticket_map })
         .then((ticket_type) => {
